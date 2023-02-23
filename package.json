@@ -1,7 +1,7 @@
 {
-  "name": "sushi-restaurant-website",
+  "name": "photography-portfolio",
   "version": "1.0.0",
-  "description": "A Website for a Sushi Restaurant",
+  "description": "A Website for a Photography Portfolio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
