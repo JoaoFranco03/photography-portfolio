@@ -118,7 +118,7 @@ To get a local copy up and running follow these simple example steps.
 - [x] Create the About Me Page
 - [x] Create the Contact Page
 - [x] Add a Dark Mode
-- [ ] Create a Lightbox
+- [x] Create a Lightbox
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
