@@ -23,7 +23,7 @@
     <!-- End - Fonts -->
   </head>
   <body
-    class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20"
+    class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500"
   >
     <!-- Navbar -->
     <header class="flex w-full overflow-hidden pt-10 pb-1">
@@ -224,5 +224,22 @@
     </footer>
     <!-- Script for Navbar Animation when in Mobile -->
     <script src="/src/navbar.js"></script>
+    <!-- Script for the Fade In Animation -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.querySelector("body");
+        body.classList.remove("opacity-0");
+        body.classList.add("opacity-100");
+        const photos = document.querySelectorAll("img");
+        let delay = 0;
+        photos.forEach((photo) => {
+          setTimeout(() => {
+            photo.classList.remove("opacity-0");
+            photo.classList.add("opacity-100");
+          }, delay);
+          delay += 100;
+        });
+      });
+    </script>
   </body>
 </html>
