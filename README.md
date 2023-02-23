@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/JoaoFranco03/EcoRede">
+  <a href="https://github.com/JoaoFranco03/photography-portfolio">
     <img src="assets/Logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
