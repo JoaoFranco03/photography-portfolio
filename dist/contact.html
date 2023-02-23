@@ -247,18 +247,7 @@
         </p>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-      defer
-    ></script>
-    <script>
-      let toggleBtn = document.querySelector("#navbar-toggle");
-      let collapse = document.querySelector("#navbar-collapse");
-
-      toggleBtn.onclick = () => {
-        collapse.classList.toggle("hidden");
-        collapse.classList.toggle("flex");
-      };
-    </script>
+    <!-- Script for Navbar Animation when in Mobile -->
+    <script src="/src/navbar.js"></script>
   </body>
 </html>

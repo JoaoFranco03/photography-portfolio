@@ -22,7 +22,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
-
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -438,28 +437,9 @@
         </p>
       </div>
     </footer>
-    <script id="rendered-js">
-      // Getting hamburguer menu in small screens
-      const menu = document.getElementById("menu");
-      const ulMenu = document.getElementById("ulMenu");
-
-      function menuToggle() {
-        menu.classList.toggle("h-32");
-      }
-
-      // Browser resize listener
-      window.addEventListener("resize", menuResize);
-
-      // Resize menu if user changing the width with responsive menu opened
-      function menuResize() {
-        // First get the size from the window
-        const window_size = window.innerWidth || document.body.clientWidth;
-        if (window_size > 640) {
-          menu.classList.remove("h-32");
-        }
-      }
-      //# sourceURL=pen.js
-    </script>
+    <!-- Script for Navbar Animation when in Mobile -->
+    <script src="/src/navbar.js"></script>
+    <!-- Script for the LightBox -->
     <script>
       Fancybox.bind("[data-fancybox]", {
         // Your custom options
