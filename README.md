@@ -110,8 +110,8 @@ To get a local copy up and running follow these simple example steps.
 
 ## ToDo
 
-- [x] Create the Images Grid
 - [x] Design the UI/UX
+- [x] Create the Images Grid
 - [x] Create the Footer
 - [x] Create the Navbar and make it Responsive
 - [x] Create the Portfolio Page
