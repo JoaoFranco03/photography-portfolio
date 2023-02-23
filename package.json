@@ -1,0 +1,14 @@
+{
+  "name": "sushi-restaurant-website",
+  "version": "1.0.0",
+  "description": "A Website for a Sushi Restaurant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
