@@ -31,7 +31,7 @@
   <h3 align="center">Photography Portfolio</h3>
 
   <p align="center">
-    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photographer Portfolio.
+    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photography Portfolio.
     <br />
     <br />
   </p>
@@ -64,7 +64,7 @@
 
 # About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photographer-portfolio)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photography-portfolio)
 
 This project is a web-based portfolio that beautifully showcases the photography work of Sophia Williams, a fictional photographer. The portfolio was skillfully built using a combination of powerful front-end technologies, including Tailwind CSS, CSS, HTML, and JavaScript.
 
@@ -91,7 +91,7 @@ To get a local copy up and running follow these simple example steps.
 1. Clone the repo
 
 ```sh
- git clone https://github.com/JoaoFranco03/photographer-portfolio/.git
+ git clone https://github.com/JoaoFranco03/photography-portfolio/.git
 ```
 
 2.  Run the following command:
@@ -133,7 +133,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 João Franco - https://www.linkedin.com/in/joão-franco-452161195/
 
-Project Link: [https://github.com/JoaoFranco03/photographer-portfolio/](https://github.com/JoaoFranco03/photographer-portfolio/)
+Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://github.com/JoaoFranco03/photography-portfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +165,7 @@ Project Link: [https://github.com/JoaoFranco03/photographer-portfolio/](https://
 [css-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[license-url]: https://github.com/JoaoFranco03/photographer-portfolio/blob/main/LICENSE.md
+[license-url]: https://github.com/JoaoFranco03/photography-portfolio/blob/main/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/joão-franco-452161195/
 [product-screenshot]: assets/mockup.png
