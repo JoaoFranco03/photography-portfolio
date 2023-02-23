@@ -145,6 +145,7 @@ Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://g
 
 ## Acknowledgments
 
+- FancyBox (https://fancyapps.com/fancybox/)
 - [Unsplash](https://unsplash.com/)
 - [Tailwind Documentation](https://tailwindcss.com/docs/installation)
 
