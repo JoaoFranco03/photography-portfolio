@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="wid  th=device-width, initial-scale=1.0" />
     <title>SH - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="output.css" />
     <link rel="stylesheet" href="/src/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Start - Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -17,6 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100;16..144,200;16..144,300;16..144,400;16..144,500;16..144,600;16..144,700&display=swap"
       rel="stylesheet"
     />
+    <!-- End - Fonts -->
+    <!-- Start - Fancybox Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link
       rel="stylesheet"
@@ -27,11 +32,12 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+    <!-- End - Fancybox Scripts -->
   </head>
   <body
     class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20"
   >
-    <!-- Hero -->
+    <!-- Navbar -->
     <header class="flex w-full overflow-hidden pt-10 pb-1">
       <!-- Navbar -->
       <nav id="nav" role="navigation" class="w-full">
@@ -92,6 +98,7 @@
         </div>
       </nav>
     </header>
+    <!-- Content -->
     <div class="container mx-auto">
       <h1 class="text-4xl pt-10 pb-8"><b>PORTFOLIO</b></h1>
       <section class="text-neutral-700">
@@ -441,9 +448,7 @@
     <script src="/src/navbar.js"></script>
     <!-- Script for the LightBox -->
     <script>
-      Fancybox.bind("[data-fancybox]", {
-        // Your custom options
-      });
+      Fancybox.bind("[data-fancybox]", {});
     </script>
   </body>
 </html>
