@@ -34,7 +34,7 @@
     A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photography Portfolio.
     <br />
     <br />
-    <a href="https://raw.githack.com/JoaoFranco03/photography-portfolio/main/dist/index.html">View Demo</a>
+    <a href="https://photography-portfolio-joaofranco03.netlify.app/">View Demo</a>
     <br />
     <br />
     
