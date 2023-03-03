@@ -222,44 +222,7 @@
         </p>
       </div>
     </footer>
-    <!-- Script for the Fade In Animation -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const body = document.querySelector("body");
-        body.classList.remove("opacity-0");
-        body.classList.add("opacity-100");
-        const photos = document.querySelectorAll("img");
-        let delay = 0;
-        photos.forEach((photo) => {
-          setTimeout(() => {
-            photo.classList.remove("opacity-0");
-            photo.classList.add("opacity-100");
-          }, delay);
-          delay += 100;
-        });
-      });
-    </script>
-    <!-- Script for the Hamburger Menu -->
-    <script>
-      // Getting hamburguer menu in small screens
-      const menu = document.getElementById("menu");
-      const ulMenu = document.getElementById("ulMenu");
-
-      function menuToggle() {
-        menu.classList.toggle("h-32");
-      }
-
-      // Browser resize listener
-      window.addEventListener("resize", menuResize);
-
-      // Resize menu if user changing the width with responsive menu opened
-      function menuResize() {
-        // First get the size from the window
-        const window_size = window.innerWidth || document.body.clientWidth;
-        if (window_size > 640) {
-          menu.classList.remove("h-32");
-        }
-      }
-    </script>
+    <script src="fade_in.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>
