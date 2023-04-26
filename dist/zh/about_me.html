@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GS - About Me</title>
+    <!-- Favicon -->
+    <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Start - Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100;16..144,200;16..144,300;16..144,400;16..144,500;16..144,600;16..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- End - Fonts -->
+  </head>
+  <body
+    class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500"
+  >
+    <!-- Navbar -->
+    <header class="flex w-full overflow-hidden pt-10 pb-1">
+      <nav id="nav" role="navigation" class="w-full">
+        <div
+          class="container mx-auto flex flex-wrap items-center md:flex-no-wrap"
+        >
+          <div class="mr-4 md:mr-8">
+            <a href="index.html" class="text-2xl signika"
+              ><b>GUANG STUDIO</b>
+            </a>
+          </div>
+          <div class="ml-auto md:hidden">
+            <button onclick="menuToggle()" type="button">
+              <svg
+                class="h-5 w-5 fill-current text-black dark:text-white"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            id="menu"
+            class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center"
+          >
+            <ul
+              id="ulMenu"
+              class="flex flex-col duration-300 ease-out sm:transition-none mt-5 mx-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0"
+            >
+              <li class="group transition duration-300 ml-5">
+                <a href="portfolio.html" class="signika text-2xl"
+                  >PORTFOLIO
+                  <span
+                    class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"
+                  ></span>
+                </a>
+              </li>
+              <li class="group transition duration-300 ml-5">
+                <a href="about_me.html" class="signika text-2xl"
+                  >ABOUT ME
+                  <span
+                    class="hidden md:block h-0.5 bg-black dark:bg-white"
+                  ></span
+                ></a>
+              </li>
+              <li class="group transition duration-300 ml-5">
+                <a href="contact.html" class="signika text-2xl"
+                  >CONTACT
+                  <span
+                    class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"
+                  ></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Content -->
+    <div class="container mx-auto">
+      <h1 class="text-4xl pt-10 pb-8"><b>ABOUT ME</b></h1>
+      <div class="grid grid-cols-2 gap-16">
+        <img
+          src="../assets/Avatar.png"
+          alt=""
+          class="col-span-2 md:col-span-1 rounded flex flex-col w-full object-cover h-auto"
+        />
+        <section class="col-span-2 md:col-span-1 my-auto">
+          <p class="text-3xl mb-6">Hello there, I'm Guang 👋</p>
+          <p class="text-lg mb-4">
+            I'm a San Francisco-based photographer with over 6 years of
+            experience in capturing unforgettable moments. I specialize in
+            creating images that are both visually striking and emotionally
+            impactful, and I have developed a signature style that blends
+            natural beauty with vibrant colors and bold compositions.
+          </p>
+          <p class="text-lg mb-4">
+            When I'm not behind the camera, you can find me exploring the city's
+            diverse neighborhoods, trying out new restaurants, or spending time
+            with my family and friends. I believe that every moment is an
+            opportunity to experience something new and to create memories that
+            will last a lifetime.
+          </p>
+          <p class="text-lg">
+            Thank you for taking the time to learn a little bit about me and my
+            work. If you're interested in collaborating or would like to see
+            more of my portfolio, please don't hesitate to get in touch. Let's
+            work together to bring your vision to life!
+          </p>
+        </section>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="max-w-screen-xl py-16 mx-auto">
+        <div class="grid grid-cols-1 gap-8 text-center mx-auto">
+          <div>
+            <p class="signika"><b>GUANG STUDIO</b></p>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              929 Sycamore Street San Francisco CA<br />(415) 208- 2116
+            </p>
+            <div class="flex mx-auto">
+              <div
+                class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300"
+              >
+                <a
+                  class="transition duration-300 hover:opacity-75"
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span class="sr-only"> Instagram </span>
+                  <svg
+                    class="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-8 text-xs text-gray-600 text-center">
+          © 2023 Developed and Designed by
+          <a
+            href="https://www.linkedin.com/in/joão-franco-452161195/"
+            class="underline"
+            >João Franco</a
+          >,
+          <a
+          href="https://www.linkedin.com/in/linyisabrinali/"
+          class="underline"
+          >Linyi Li</a
+        >
+        </p>
+      </div>
+    </footer>
+    <script src="../fade_in.js"></script>
+    <script src="../menu.js"></script>
+  </body>
+</html>
