@@ -5,3 +5,13 @@
 .serif {
   font-family: "Montagu Slab", serif;
 }
+
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}
+
+.category:hover {
+  font-weight: bolder;
+  animation-duration: 400;
+}

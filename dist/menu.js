@@ -1,9 +1,13 @@
 // Getting hamburguer menu in small screens
 const menu = document.getElementById("menu");
-const ulMenu = document.getElementById("ulMenu");
+const menuSub = document.getElementById("menuSub");
 
 function menuToggle() {
   menu.classList.toggle("h-32");
+}
+
+function menuToggleSub() {
+  menuSub.classList.toggle("h-32");
 }
 
 // Browser resize listener
