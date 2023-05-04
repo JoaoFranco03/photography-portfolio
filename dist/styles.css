@@ -15,3 +15,9 @@
   font-weight: bolder;
   animation-duration: 400;
 }
+
+@media (max-width: 767px) {
+  #menuSub {
+    display: none;
+  }
+}

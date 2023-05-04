@@ -47,9 +47,9 @@ const categories = [
         { title: 'Art 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81p5IdserQETCheAFJhQvXcSESItofsdj7M39Ti73RgB18Ic9-a9FqQYMSC_yPtiZ-IqEdSKVjvjVEfhJ7Rtxs6ZxdKX=s1600' },
         { title: 'Art 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pdc9ECtTiNr09LXvY9Fc7qj13P0pJ9fghXBSpID47yLq_x-RxITFYvKn_I0aecmp-MuL5TVTQPm7zI-wAdOm8S-gPd=s1600' },
         { title: 'Art 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oWMkRJgmhDUSCFVz9b_1UIIqLakVTQeGDw0S2UHJFzgqYtwSlHEkSoKfz8GMvJfLv1Gnws1jpqu2BpNbUC0Vsl-V4QGQ=s1600' },
-        { title: 'Art 4', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rrIUK4zKD7r4gNwtF7g5m6Rw520DGFHnbbnwUDbLfjLXqQinU_UC5_I4-mRQKO_9aTgLufq9f3lonDBDSxKY4hS88T=s1600' },
+        { title: 'Art 4', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pKisDBXCySlLmD3tpij5SKbDLnW7NMQSFrcGcNzaxtZE9m6YSJaj3gukeM7KUP0CS8NiPu4WPPE3u2LPA1xxnWT78t=s1600' },
         { title: 'Art 5', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qGHPkrlt5qMAbPpaFkk1-f4UUClXqxF3bpbcchkzcKeOxkeI_q3Hw-21Jjx3U0iD74RcDiry7N6mzSXXFGeeUsek-ung=s1600' },
-        { title: 'Art 6', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rUo1X3ghcDHs_20NNpshuJCL_Un2xuUyAcA7MKYs1FP4753-DgOiNsKykvlWGnI6amt7hxic6an_t8gF9Fv4-6Z6xpUA=s1600' },
+        { title: 'Art 6', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rLAYQGPLAXEO7dQjX_LRhvQYYmdxZfxsQwRt3Vm0QRUVmEELUMvDrRHxAeiZchV-xaI8-HL9XZ1vV5fyuU0yuGr2Cv=s1600' },
       ]
     },
     {
@@ -93,7 +93,12 @@ const categories = [
   
     category.photos.forEach(photo => {
       const photoElement = document.createElement('div');
-      photoElement.classList.add('rounded-md', 'overflow-hidden');
+      if (category.name === 'Kids & Parents' || category.name === 'Family & Friends') {
+        photoElement.classList.add('rounded-md', 'relative', 'aspect-w-1', 'aspect-h-1', 'overflow-hidden');
+        photoElement.style.paddingBottom = '100%';
+      } else {
+        photoElement.classList.add('rounded-md', 'overflow-hidden');
+      }
 
       const galleryElement = document.createElement('a');
       galleryElement.href = photo.imageUrl;
@@ -102,8 +107,13 @@ const categories = [
       const imageElement = document.createElement('img');
       imageElement.src = photo.imageUrl;
       imageElement.alt = photo.title;
-      imageElement.classList.add('block', 'h-full', 'w-full', 'object-cover', 'object-center',
-      'opacity-0', 'animate-fade-in', 'transition', 'duration-500', 'transform', 'scale-100',);
+      if (category.name === 'Kids & Parents' || category.name === 'Family & Friends') {
+        imageElement.classList.add('object-cover', 'absolute', 'h-full', 'w-full', 'object-cover', 'object-center',
+        'opacity-0', 'animate-fade-in', 'transition', 'duration-500', 'transform', 'scale-100',);
+      } else {
+        imageElement.classList.add('block', 'h-full', 'w-full', 'object-cover', 'object-center',
+        'opacity-0', 'animate-fade-in', 'transition', 'duration-500', 'transform', 'scale-100',);
+      }
 
       galleryElement.appendChild(imageElement);
       photoElement.appendChild(galleryElement);
