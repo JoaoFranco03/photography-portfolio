@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "flowbite": "^1.6.5"
   },
   "devDependencies": {
