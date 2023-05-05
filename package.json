@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "flowbite": "^1.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
