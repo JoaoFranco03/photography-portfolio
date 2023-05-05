@@ -1,9 +1,12 @@
 const categories = [
     {
       name: 'Kids & Parents',
+      name_cn: '儿童与亲子',
       id: "kids-and-parents",
       description: 
       "From the first days of life, to the steps of growing up, in these photographs we see a glimpse of something pure and true.",
+      description_cn:
+      "从牙牙学语，到成长的每一步，我们在摄影中窥见可爱与纯真。",
       photos: [
         { title: 'Young Boy 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pouZaVjFcCfNjwYissUwqIa1Qj7RbAvoKW5eRYERbLEa6lyQp--xY0m2hqG84WElgM6ieNGn2l61uHIgTLDBHoUCENgw=s1600' },
         { title: 'Young Boy 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r3NdOEZ8GLcC5YoEJfpKLU1LcE1DgwmY7EhJgSvaxDT-26zPB36wFcq3gwxSmEedlGSpdC8m_UQ-ROLTFGr9EEmYAzyg=s1600' },
@@ -15,9 +18,12 @@ const categories = [
     },
     {
       name: 'Family & Friends',
+      name_cn: '家庭和亲友',
       id: "family-and-friends",
       description: 
       "Gathered together, young and old. In moments that bring us all close, we see the ties that bind us through the images that expose.",
+      description_cn:
+      "三世同堂。每一张照片都如同一段动人的故事，将我们带回到那些温馨而珍贵的时刻。",
       photos: [
         { title: 'Family', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81obtJJThLSTt72aWUmWwsEXoyd6X5wrkro6Uqh-O7lgUlqZnlEPn0W1vAP2RYfSzm7RD4TSth6nZrep3aFQzyM1CjLICw=s1600' },
         { title: 'Young Couple', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r0ka3U-8A5HkSRfW-7xQnGVSIAxw3BjZ7fzAPJJZoSc1MJVYMSaOHkHKj1vDhNBUYPaIMQxPIjYCV9rdabyPMVZhvh=s1600' },
@@ -26,9 +32,12 @@ const categories = [
     },
     {
       name: 'Work & Business',
+      name_cn: '工作与商务',
       id: "word-and-business",
       description: 
       "My lens witnesses the essence of their spirit, the depth of their passion, and the beauty of their enterprise.",
+      description_cn:
+      "我们的镜头见证了我们的活力、热情，以及对事业的热爱。",
       photos: [
         { title: 'Business 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rgaOHwK2zDJHMALa6ItRIanHR3WHRnzYojXnQ_ms5bDlhJY7PO_T8QblmTSb1DRauwJQ79SnyS7ydfdTROJY-s3h_44g=s1600' },
         { title: 'Business 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qw1M2P-lbJJ7C23fnJNvEZRUTsX5ACOMDetIble_iQ_zR9nTKAVymhdtzNUjIWANM51bvq2aUcQq-qkeQvsPT9gAsc8Q=s1600' },
@@ -40,9 +49,12 @@ const categories = [
     },
     {
       name: 'Art & Fashion',
+      name_cn: '艺术与时尚',
       id: "art-and-fashion",
       description: 
       "Behold the human soul through the lens of my camera. Witness the beauty and complexity of our species, and discover the stories that shape us all.",
+      description_cn:
+      "相机乃是灵魂的亲历者。在镜头下，尽是人类的复杂与美丽。",
       photos: [
         { title: 'Art 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81p5IdserQETCheAFJhQvXcSESItofsdj7M39Ti73RgB18Ic9-a9FqQYMSC_yPtiZ-IqEdSKVjvjVEfhJ7Rtxs6ZxdKX=s1600' },
         { title: 'Art 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pdc9ECtTiNr09LXvY9Fc7qj13P0pJ9fghXBSpID47yLq_x-RxITFYvKn_I0aecmp-MuL5TVTQPm7zI-wAdOm8S-gPd=s1600' },
@@ -54,10 +66,13 @@ const categories = [
     },
     {
       name: 'Landscapes & Still Lifes',
+      name_cn: '风景和静物',
       id: "landscapes-and-still-lifes",
       description: 
       "From the winding roads of distant lands to the lush forests and ancient hutongs of Huizhou,\
       my lens conveys the essence of the natural world.",
+      description_cn:
+      "在路上、草原里、胡同中，我们向往传递大自然的魅力。",
       photos: [
         { title: 'Mountain', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81ranRYB7ly_nArlOp-6-WMMBfYN10d1_QLLjDE-ueKoZYui-XFGq5vdvxX3_gjm8m3CiTofbxTa4ghwyUXDiaY5sdbM=s1600' },
         { title: 'Temple', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rVKDvwHTs4wSx_4t3JjTvympU7AsadK1z3hfEC40cKNqddMzObZmTXc1jeqAPqOWAzQNi5gnd6hFt32FjMaY8yWfSs=s1600' },
@@ -79,13 +94,21 @@ const categories = [
   
     const categoryTitleElement = document.createElement('h2');
     categoryTitleElement.classList.add('text-2xl', 'mb-2');
-    categoryTitleElement.textContent = category.name;
+    if (document.documentElement.lang === 'en') {
+      categoryTitleElement.textContent = category.name;
+    } else {
+      categoryTitleElement.textContent = category.name_cn;
+    }
     categoryTitleElement.id = category.id;
     categoryElement.appendChild(categoryTitleElement);
   
     const categoryDescriptionElement = document.createElement('p');
     categoryDescriptionElement.classList.add('text-lg', 'text-gray-600', 'mb-4');
-    categoryDescriptionElement.textContent = category.description;
+    if (document.documentElement.lang === 'en') {
+      categoryDescriptionElement.textContent = category.description;
+    } else {
+      categoryDescriptionElement.textContent = category.description_cn;
+    }
     categoryElement.appendChild(categoryDescriptionElement);
   
     const photosElement = document.createElement('div');

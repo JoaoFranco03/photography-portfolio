@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Language" content="zh">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GS - 关于我</title>
+    <title>GS - 关于我们</title>
     <!-- Favicon -->
     <link rel="stylesheet" href="../output.css" />
     <link rel="stylesheet" href="../styles.css" />
@@ -79,6 +79,12 @@
                   ></span>
                 </a>
               </li>
+              <li class="group transition duration-300 ml-5">
+                <button id="toggle-language" type="button" class="signika text-xl">English</button>
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"
+                ></span>
+              </li>
             </ul>
           </div>
         </div>
@@ -94,9 +100,9 @@
           class="col-span-2 md:col-span-1 rounded flex flex-col w-full object-cover h-auto"
         />
         <section class="col-span-2 md:col-span-1 my-auto">
-          <!-- <p class="text-3xl mb-6">你好，我是周光 👋</p> -->
+          <!-- <p class="text-3xl mb-6">Hello there, I'm Guang 👋</p> -->
           <p class="text-lg mb-4">
-            Guang Studio 是一家专门从事高质量图片和视频制作服务的影像工作室，拥有经验丰富，技术高超的专业团队，常年服务于北美地区的人像摄影、商旅摄影、视频短片和广告制作。
+            Guang Studio 是一家专门从事高质量图片和视频制作服务的影像工作室，拥有经验丰富，技术高超的专业团队，常年服务于北美地区的<b>人像摄影、商旅摄影、视频短片和广告制作。</b>
           </p>
           <p class="text-lg mb-4">
             Guang Studio 的摄影师均来自于中国影视行业的顶尖从业人员，对光线、构图和色彩的表达都是以电影的画质为标准，
@@ -109,56 +115,33 @@
       </div>
     </div>
     <!-- Footer -->
-   <footer>
-    <div class="max-w-screen-xl py-16 mx-auto">
-      <div class="grid grid-cols-1 gap-8 text-center mx-auto">
-        <div>
-          <p class="signika"><b>GUANG STUDIO</b></p>
-          <div class="flex mx-auto">
-            <div
-              class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300"
-            >
-              <a
-                class="transition duration-300 hover:opacity-75"
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span class="sr-only"> Instagram </span>
-                <svg
-                  class="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                  />
-                </svg>
-              </a>
-            </div>
+    <footer>
+      <div class="max-w-screen-xl py-14 mx-auto">
+        <div class="grid grid-cols-1 gap-4 text-center mx-auto">
+          <div>
+            <p class="signika"><b>GUANG STUDIO</b></p>
           </div>
         </div>
-      </div>
-      <p class="mt-8 text-sm text-gray-600 text-center">
-        © 2023 Guang Studio LLC All Rights Reserved.
-      </p>
-      <p class="mt-2 text-xs text-gray-600 text-center">
-        Website Developed by
+        <p class="mt-8 text-sm text-gray-600 text-center">
+          © 2023 Guang Studio LLC All Rights Reserved.
+        </p>
+        <p class="mt-2 text-xs text-gray-600 text-center">
+          Website Developed by
+          <a
+          href="https://www.linkedin.com/in/linyisabrinali/"
+          class="underline"
+          >Linyi Li</a
+        >, adapted from
         <a
-        href="https://www.linkedin.com/in/linyisabrinali/"
-        class="underline"
-        >Linyi Li</a
-      >, adapted from
-      <a
-        href="https://github.com/JoaoFranco03/photography-portfolio"
-        class="underline"
-        >Github</a
-      >
-      </p>
-    </div>
-  </footer>
+          href="https://github.com/JoaoFranco03/photography-portfolio"
+          class="underline"
+          >Github</a
+        >
+        </p>
+      </div>
+    </footer>
     <script src="../fade_in.js"></script>
     <script src="../menu.js"></script>
+    <script src="../language-toggle.js"></script>
   </body>
 </html>

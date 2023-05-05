@@ -1235,6 +1235,14 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
+.h-3\/6 {
+  height: 50%;
+}
+
+.h-4\/6 {
+  height: 66.666667%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1263,10 +1271,6 @@ input:checked + .toggle-bg {
   width: 100%;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
 .max-w-0 {
   max-width: 0rem;
 }
@@ -1279,8 +1283,8 @@ input:checked + .toggle-bg {
   max-width: 1280px;
 }
 
-.max-w-full {
-  max-width: 100%;
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 
 .flex-1 {
@@ -1417,6 +1421,14 @@ input:checked + .toggle-bg {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1654,6 +1666,21 @@ input:checked + .toggle-bg {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .pb-1 {
@@ -2137,10 +2164,6 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 640px) {
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -2213,20 +2236,12 @@ input:checked + .toggle-bg {
     flex-grow: 1;
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:items-center {
     align-items: center;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
   }
 
   .md\:border-0 {
