@@ -4,10 +4,10 @@ toggleLanguageButton.addEventListener('click', () => {
   const newLanguage = currentLanguage === 'en' ? 'zh' : 'en';
   document.documentElement.lang = newLanguage;
   toggleLanguageButton.innerText = newLanguage === 'en' ? 'Chinese' : 'English';
-  const url = window.location.href;
-  if (currentLanguage === 'en' && newLanguage === 'zh' && !url.includes('/zh/')) {
-    window.location.href = url.replace('/dist/', '/dist/zh/');
-  } else if (currentLanguage === 'zh' && newLanguage === 'en' && url.includes('/zh/')) {
-    window.location.href = url.replace('/dist/zh/', '/dist/');
+  const path = window.location.pathname;
+  if (currentLanguage === 'en' && newLanguage === 'zh' && !path.includes('/zh/')) {
+    window.location.href = `${window.location.origin}/zh${path}`;
+  } else if (currentLanguage === 'zh' && newLanguage === 'en' && path.includes('/zh/')) {
+    window.location.href = `${window.location.origin}${path.replace('/zh', '')}`;
   }
 });
