@@ -1,0 +1,11 @@
+# Redirects for English version
+/index.html  /
+/about_me.html  /about_me
+/portfolio  /portfolio
+/contact  /contact
+
+# Redirects for Chinese version
+/zh/index.html  /zh/
+/zh/about_me.html  /zh/about_me
+/zh/portfolio  /zh/portfolio
+/zh/contact  /zh/contact
