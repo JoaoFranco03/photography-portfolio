@@ -11,8 +11,8 @@ const categories = [
         { title: 'Young Boy 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pouZaVjFcCfNjwYissUwqIa1Qj7RbAvoKW5eRYERbLEa6lyQp--xY0m2hqG84WElgM6ieNGn2l61uHIgTLDBHoUCENgw=s1600' },
         { title: 'Young Boy 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r3NdOEZ8GLcC5YoEJfpKLU1LcE1DgwmY7EhJgSvaxDT-26zPB36wFcq3gwxSmEedlGSpdC8m_UQ-ROLTFGr9EEmYAzyg=s1600' },
         { title: 'Mom and Boy', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pHbe3ySB6Z729WMVaYieOKNOyjus2aaGAgoPxbFji_S1dqIKniybET1YPS8sfSlbBV0kVsq5Ctow3aWFvc_bKWiTHzyw=s1600' },
-        { title: 'Mom and Girls', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81o72B0SXU36jSynNS6PgWS-BkJHA4wpQNlrMamPe5-ky3CqmFZbZZBc7jKQo0E6e1iJlgmVy7TOterBb2esFx0skpXeRg=s1600' },
-        { title: 'Young Girl 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81q_dYrFsnXUxDNq9vkuRaczQzuyfxMzsYDTyDd1elB3axGQ-cUAtwLVWgEYHnEaQJxp0LLet9puP72uz7aEHiYxYkCvcA=s1600' },
+        { title: 'Young Girl 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oYtI0tgzBAlFBAwyn33iVxJKNWzazSlugEACSNwEzuXc_3o1LN2-Q6DCVU1uV24dU4W51qXLHB_8_8Y1DQduLqsTzh=s1600' },
+        { title: 'Mom and Girl', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oxsqCUtZkTM5fQi6N_suO-t7DrMtmC2olWy7evKz3pUyZY2S8v7BsaZqhr_MWSjchU_JvAoEmhO2NIiO_7eDKBNbGb7A=s1600' },
         { title: 'Young Girl 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rQw8gECCLhkan1Rv0KeTc2OF_ayLK3oEFnZ7bsWfgSob7yEsqLaPtEOK0AJCivZXpa7iGWkzTFcAbv9c6m94c4hMhjhQ=s1600' },
       ]
     },
@@ -82,7 +82,7 @@ const categories = [
         { title: 'Car', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qlfSPXMyIW7M5pPSsz2YLPLuZXgrQZnVW-lmNvnB2jvtdLlPtjF3BIRbvoYtACg_79PpoHhvHRK38azHuwmNs3CEvCEA=s1600' },
         { title: 'Leaf 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81paJPApHW_p6etknpQJ7eALAjrcwlSEWsv-Z8eVVHOlLpCCQiVy8u8vhJjRXPKmDax0pfaU6dtXSZ_QbsSQaumAZLk2Cg=s1600' },
         { title: 'Leaf 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81otbs7pwMBd7NzWh3X96-9gJ-WP6d8dRD13D2crQMQ2d6BYdFi1ojvfbBAWCVNi7R2_LN-7ZX6ZplFr_bCIh1fYbAel=s1600' },
-        { title: 'Leaf 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qGaPdE5aCENbefrMMhYUJzktgQJonbPeQkIAWejYMEdxlW43rHmiuMCCVbGD3p4OMBgXaaaHqTqIzFU7kprg09mkj3=s1600' },
+        { title: 'Leaf 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rf8fmnDPjQoB89ZlYyTpk_ga67VjTX6gbMVF_trkqfMxhuZJDcMGW-aaBLWyt1D7J6x8c8mDtgJqYT756sBCACz-Vf5g=s1600' },
       ]
     },
   ];
