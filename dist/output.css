@@ -1524,10 +1524,6 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-\[url\(\'https\:\/\/lh3\.googleusercontent\.com\/drive-viewer\/AFGJ81rFwVrYQAuEVKH9ON40s2daLcrNQbF76VaYFu4kWbBYfoAw8PmDyPmj3JjjqvyoPvczslexLPouBK_07Fj6uYwv6HrjbQ\=s1600\'\)\] {
-  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AFGJ81rFwVrYQAuEVKH9ON40s2daLcrNQbF76VaYFu4kWbBYfoAw8PmDyPmj3JjjqvyoPvczslexLPouBK_07Fj6uYwv6HrjbQ=s1600');
-}
-
 .bg-cover {
   background-size: cover;
 }

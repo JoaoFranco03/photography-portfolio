@@ -8,12 +8,12 @@ const categories = [
       description_cn:
       "从牙牙学语，到成长的每一步，我们在摄影中窥见可爱与纯真。",
       photos: [
-        { title: 'Young Boy 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pouZaVjFcCfNjwYissUwqIa1Qj7RbAvoKW5eRYERbLEa6lyQp--xY0m2hqG84WElgM6ieNGn2l61uHIgTLDBHoUCENgw=s1600' },
-        { title: 'Young Boy 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r3NdOEZ8GLcC5YoEJfpKLU1LcE1DgwmY7EhJgSvaxDT-26zPB36wFcq3gwxSmEedlGSpdC8m_UQ-ROLTFGr9EEmYAzyg=s1600' },
-        { title: 'Mom and Boy', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pHbe3ySB6Z729WMVaYieOKNOyjus2aaGAgoPxbFji_S1dqIKniybET1YPS8sfSlbBV0kVsq5Ctow3aWFvc_bKWiTHzyw=s1600' },
-        { title: 'Young Girl 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oYtI0tgzBAlFBAwyn33iVxJKNWzazSlugEACSNwEzuXc_3o1LN2-Q6DCVU1uV24dU4W51qXLHB_8_8Y1DQduLqsTzh=s1600' },
-        { title: 'Mom and Girl', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oxsqCUtZkTM5fQi6N_suO-t7DrMtmC2olWy7evKz3pUyZY2S8v7BsaZqhr_MWSjchU_JvAoEmhO2NIiO_7eDKBNbGb7A=s1600' },
-        { title: 'Young Girl 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qpDvMYWL6ZFK2ABZEtWQJO-7Xc1aMWjr4tHsFyuAQcmFVclBqyIVGtnvN1G8y5pa4d-UhulLjFdypj0BFbnSIHVdd0tw=s1600' },
+        { title: 'Young Boy 1', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/1.jpg' },
+        { title: 'Young Boy 2', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/2.jpg' },
+        { title: 'Mom and Boy', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/3.jpg' },
+        { title: 'Young Girl 1', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/4.JPG' },
+        { title: 'Mom and Girl', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/5.JPG' },
+        { title: 'Young Girl 2', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%84%BF%E7%AB%A5%E4%B8%8E%E4%BA%B2%E5%AD%90/6-2.jpg' },
       ]
     },
     {
@@ -25,9 +25,9 @@ const categories = [
       description_cn:
       "三世同堂。每一张照片都如同一段动人的故事，将我们带回到那些温馨而珍贵的时刻。",
       photos: [
-        { title: 'Family', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81obtJJThLSTt72aWUmWwsEXoyd6X5wrkro6Uqh-O7lgUlqZnlEPn0W1vAP2RYfSzm7RD4TSth6nZrep3aFQzyM1CjLICw=s1600' },
-        { title: 'Young Couple', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r0ka3U-8A5HkSRfW-7xQnGVSIAxw3BjZ7fzAPJJZoSc1MJVYMSaOHkHKj1vDhNBUYPaIMQxPIjYCV9rdabyPMVZhvh=s1600' },
-        { title: 'Old Couple', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81ooONHui0oskZdmrqlQCCsy2RAmzecNa7xYRRf3kQLRztMkGtw8Djz6Bv7wxYC1nBnyoPwNDHOljCfax9lRcRn2kQA8JA=s1600' },
+        { title: 'Family', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%AE%B6%E5%BA%AD%E5%92%8C%E4%BA%B2%E5%8F%8B/AD-6.jpg' },
+        { title: 'Young Couple', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%AE%B6%E5%BA%AD%E5%92%8C%E4%BA%B2%E5%8F%8B/AD-9.jpg' },
+        { title: 'Old Couple', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%AE%B6%E5%BA%AD%E5%92%8C%E4%BA%B2%E5%8F%8B/AD-25.jpg' },
       ]
     },
     {
@@ -39,12 +39,12 @@ const categories = [
       description_cn:
       "我们的镜头见证了我们的活力、热情，以及对事业的热爱。",
       photos: [
-        { title: 'Business 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rgaOHwK2zDJHMALa6ItRIanHR3WHRnzYojXnQ_ms5bDlhJY7PO_T8QblmTSb1DRauwJQ79SnyS7ydfdTROJY-s3h_44g=s1600' },
-        { title: 'Business 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qw1M2P-lbJJ7C23fnJNvEZRUTsX5ACOMDetIble_iQ_zR9nTKAVymhdtzNUjIWANM51bvq2aUcQq-qkeQvsPT9gAsc8Q=s1600' },
-        { title: 'Business 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81q0q7JoTn1xVHoE3q8ix3b8SaNFixXlPjuLyFKg0FDx_6ZLckI5TniOsbQylaKN801bAc6t8mjFkxKSDc7ldjeW0kEp=s1600' },
-        { title: 'Business 4', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81r8ncN95FUeowTeZ8DJg6cHfCp06Xy-xwLjA127n42hQObUea6qLPvuDRIwEl0xYtdRep42tiHAzOaT7STFO0Ur36mk3g=s1600' },
-        { title: 'Business 5', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81p2fFjjWKIjq_kcrs0Va-9i3ioAWY9PRLzJfJuvKQ-2MNOmAAFyabdMiO4tRsBwZ8Kahd-yF9Iuk-hjWAwcdQEkZDAB=s1600' },
-        { title: 'Business 6', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oPqobIstbbpkYqzRXyMnbrlKqOednFqx0qO9JhwDtZcVz9FxcqHkcv92Je4LAisXmHaBp8Aslb3pvZMnf1FoNdhkoRjA=s1600' },
+        { title: 'Business 1', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/1.jpg' },
+        { title: 'Business 2', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/2.jpg' },
+        { title: 'Business 3', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/3.jpg' },
+        { title: 'Business 4', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/4.JPG' },
+        { title: 'Business 5', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/5.JPG' },
+        { title: 'Business 6', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E5%B7%A5%E4%BD%9C%E5%92%8C%E5%95%86%E5%8A%A1/6.jpg' },
       ]
     },
     {
@@ -56,12 +56,12 @@ const categories = [
       description_cn:
       "相机乃是灵魂的亲历者。在镜头下，尽是人类的复杂与美丽。",
       photos: [
-        { title: 'Art 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81p5IdserQETCheAFJhQvXcSESItofsdj7M39Ti73RgB18Ic9-a9FqQYMSC_yPtiZ-IqEdSKVjvjVEfhJ7Rtxs6ZxdKX=s1600' },
-        { title: 'Art 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pdc9ECtTiNr09LXvY9Fc7qj13P0pJ9fghXBSpID47yLq_x-RxITFYvKn_I0aecmp-MuL5TVTQPm7zI-wAdOm8S-gPd=s1600' },
-        { title: 'Art 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81oWMkRJgmhDUSCFVz9b_1UIIqLakVTQeGDw0S2UHJFzgqYtwSlHEkSoKfz8GMvJfLv1Gnws1jpqu2BpNbUC0Vsl-V4QGQ=s1600' },
-        { title: 'Art 4', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81pKisDBXCySlLmD3tpij5SKbDLnW7NMQSFrcGcNzaxtZE9m6YSJaj3gukeM7KUP0CS8NiPu4WPPE3u2LPA1xxnWT78t=s1600' },
-        { title: 'Art 5', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qGHPkrlt5qMAbPpaFkk1-f4UUClXqxF3bpbcchkzcKeOxkeI_q3Hw-21Jjx3U0iD74RcDiry7N6mzSXXFGeeUsek-ung=s1600' },
-        { title: 'Art 6', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rLAYQGPLAXEO7dQjX_LRhvQYYmdxZfxsQwRt3Vm0QRUVmEELUMvDrRHxAeiZchV-xaI8-HL9XZ1vV5fyuU0yuGr2Cv=s1600' },
+        { title: 'Art 1', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/1.jpg' },
+        { title: 'Art 2', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/2.jpg' },
+        { title: 'Art 3', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/3.jpg' },
+        { title: 'Art 4', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/4.JPG' },
+        { title: 'Art 5', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/5.jpg' },
+        { title: 'Art 6', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E8%89%BA%E6%9C%AF%E4%B8%8E%E6%97%B6%E5%B0%9A/6.JPG' },
       ]
     },
     {
@@ -74,15 +74,15 @@ const categories = [
       description_cn:
       "在路上、草原里、胡同中，我们向往传递大自然的魅力。",
       photos: [
-        { title: 'Mountain', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81ranRYB7ly_nArlOp-6-WMMBfYN10d1_QLLjDE-ueKoZYui-XFGq5vdvxX3_gjm8m3CiTofbxTa4ghwyUXDiaY5sdbM=s1600' },
-        { title: 'Temple', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rVKDvwHTs4wSx_4t3JjTvympU7AsadK1z3hfEC40cKNqddMzObZmTXc1jeqAPqOWAzQNi5gnd6hFt32FjMaY8yWfSs=s1600' },
-        { title: 'Tree', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qLz-jjxs2PNhaS_wsbMcr0YvZBlUwBk_yCXsMJHQyKh1D6V7B5TyJ7UnMzDh_I9s7iogBM9Tj7WOdkvffOnDoM7Wrjwg=s1600' },
-        { title: 'Hutong', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rTpohJpgoIJPDmPz5ttL804hXJWv-yNKknsY03tybWH0Hj2GVoPLA6uo76EaLkXa-AL6MYBHG23Cr_dtu9uh7lPPX-0Q=s1600' },
-        { title: 'Bath', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qu6aGtKtly3oeS6We7S01-CxNTylLmlSCQxvwEdCIL5pT48Q5xrkmbsA2veat8awy-27wxcDyo0lKBfQuKmm2Gila-=s1600' },
-        { title: 'Car', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qlfSPXMyIW7M5pPSsz2YLPLuZXgrQZnVW-lmNvnB2jvtdLlPtjF3BIRbvoYtACg_79PpoHhvHRK38azHuwmNs3CEvCEA=s1600' },
-        { title: 'Leaf 1', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81paJPApHW_p6etknpQJ7eALAjrcwlSEWsv-Z8eVVHOlLpCCQiVy8u8vhJjRXPKmDax0pfaU6dtXSZ_QbsSQaumAZLk2Cg=s1600' },
-        { title: 'Leaf 2', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81otbs7pwMBd7NzWh3X96-9gJ-WP6d8dRD13D2crQMQ2d6BYdFi1ojvfbBAWCVNi7R2_LN-7ZX6ZplFr_bCIh1fYbAel=s1600' },
-        { title: 'Leaf 3', imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81rf8fmnDPjQoB89ZlYyTpk_ga67VjTX6gbMVF_trkqfMxhuZJDcMGW-aaBLWyt1D7J6x8c8mDtgJqYT756sBCACz-Vf5g=s1600' },
+        { title: 'Mountain', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/1.jpg' },
+        { title: 'Temple', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/2.jpg' },
+        { title: 'Tree', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/3.jpg' },
+        { title: 'Hutong', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/4.jpg' },
+        { title: 'Bath', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/5.jpg' },
+        { title: 'Car', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/6.jpg' },
+        { title: 'Leaf 1', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/7.jpg' },
+        { title: 'Leaf 2', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/8.jpg' },
+        { title: 'Leaf 3', imageUrl: 'https://guang-studio.s3.us-west-1.amazonaws.com/guang-studio-pics/%E9%A3%8E%E6%99%AF%E5%92%8C%E9%9D%99%E7%89%A9/9.JPG' },
       ]
     },
   ];
