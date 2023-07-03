@@ -13,11 +13,7 @@
   <!-- Start - Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=font-signika:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100;16..144,200;16..144,300;16..144,400;16..144,500;16..144,600;16..144,700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Signika:wght@400;700&display=swap" rel="stylesheet">
   <!-- End - Fonts -->
 </head>
 
@@ -28,8 +24,7 @@
     <nav id="nav" role="navigation" class="w-full">
       <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
         <div class="mr-4 md:mr-8">
-          <a href="index.html" class="text-2xl font-signika"><b>SOPHIA WILLIAMS</b>
-          </a>
+          <a href="index.html" class="text-2xl font-signika font-bold">SOPHIA WILLIAMS</a>
         </div>
         <div class="ml-auto md:hidden">
           <button onclick="menuToggle()" type="button">
@@ -68,10 +63,10 @@
   <!-- Content -->
   <div class="container mx-auto">
     <h1 class="text-4xl pt-10 pb-8"><b>ABOUT ME</b></h1>
-    <div class="grid grid-cols-2 gap-20">
+    <div class="grid grid-cols-2 gap-14 md:gap-20">
       <div class="col-span-2 md:col-span-1">
         <div
-          class="bg-white p-5 pb-28 m-2 md:m-12 shadow-lg dark:shadow-white/25 border border-gray-100 -rotate-6 antialiased relative">
+          class="bg-white p-5 pb-28 m-6 md:m-12 shadow-lg dark:shadow-white/25 border border-gray-100 -rotate-6 antialiased relative">
           <img src="./assets/Avatar.png" alt="" class="flex flex-col w-full object-cover h-auto" />
           <div class="absolute bottom-0 left-0 right-0 bg-white text-center">
             <p class="text-gray-800 pb-7 h-full text-6xl font-cedarville">me</p>
@@ -79,8 +74,12 @@
         </div>
 
       </div>
-      <section class="col-span-2 md:col-span-1 my-auto">
-        <p class="text-3xl font-serif font-bold mb-6">Hello there, I'm Sophia 👋</p>
+      <section class="text-center md:text-start mx-3 col-span-2 md:col-span-1 my-auto">
+        <div class="block md:hidden">
+          <p class="text-3xl font-serif font-bold mb-1">Hello there,</p>
+          <p class="text-3xl font-serif font-bold mb-6">I'm Sophia 👋</p>
+        </div>
+        <p class="hidden md:block text-3xl font-serif font-bold mb-6">Hello there, I'm Sophia 👋</p>
         <p class="text-lg mb-4">
           I'm a San Francisco-based photographer with over 6 years of
           experience in capturing unforgettable moments. I specialize in
