@@ -119,6 +119,7 @@ To get a local copy up and running follow these simple example steps.
 - [x] Create the Contact Page
 - [x] Add a Dark Mode
 - [x] Create a Lightbox
+- [x] Added Polaroid Frames to Images on "About Me" and "Contact" Pages
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
