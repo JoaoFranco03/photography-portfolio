@@ -10,6 +10,8 @@
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
   <link rel="stylesheet" href="output.css" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,18 +24,27 @@
   class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
   <!-- Navbar -->
   <header class="flex w-full overflow-hidden pt-10 pb-1">
-    <nav id="nav" role="navigation" class="w-full">
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
       <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
         <div class="mr-4 md:mr-8">
           <a href="index.html" class="text-2xl font-signika font-bold">SOPHIA WILLIAMS</a>
         </div>
-        <div class="ml-auto md:hidden">
-          <button onclick="menuToggle()" type="button">
-            <svg class="h-5 w-5 fill-current text-black dark:text-white" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button onclick="menuToggle()" @click="open = !open"
+            class="tap-highlight-transparent text-gray-500 w-5 h-5 relative focus:outline-none bg-white"
+            @click="open = !open">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
           </button>
         </div>
         <div id="menu"
@@ -49,7 +60,8 @@
             <li class="group transition duration-300 ml-5">
               <a href="about_me.html" class="font-signika text-2xl">ABOUT ME
                 <span
-                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span></a>
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
             </li>
             <li class="group transition duration-300 ml-5">
               <a href="contact.html" class="font-signika text-2xl">CONTACT

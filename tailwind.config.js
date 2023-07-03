@@ -5,7 +5,7 @@ module.exports = {
     extend:
     {
       fontFamily: {
-        'cedarville': ['Cedarville Cursive', 'cursive'],
+        'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
         'signika': ['Signika', 'sans-serif'],
       },
     },
