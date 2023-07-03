@@ -6,6 +6,7 @@ module.exports = {
     {
       fontFamily: {
         'cedarville': ['Cedarville Cursive', 'cursive'],
+        'signika': ['Signika', 'sans-serif'],
       },
     },
   },
