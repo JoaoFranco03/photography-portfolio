@@ -30,7 +30,7 @@
         </div>
         <div class="ml-auto md:hidden flex items-center justify-start">
           <button onclick="menuToggle()" @click="open = !open"
-            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none"
+            class="tap-highlight-transparent text-black w-5 h-5 relative focus:outline-none bg-white"
             @click="open = !open">
             <span class="sr-only">Open main menu</span>
             <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -49,20 +49,20 @@
         <div id="menu"
           class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
           <ul id="ulMenu"
-            class="flex flex-col duration-300 ease-out sm:transition-none mt-5 mx-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
-            <li class="group transition duration-300 ml-5">
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+            <li class="group transition duration-300">
               <a href="index.html" class="font-signika text-2xl">PORTFOLIO
                 <span
                   class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
               </a>
             </li>
-            <li class="group transition duration-300 ml-5">
+            <li class="group transition duration-300">
               <a href="about_me.html" class="font-signika text-2xl">ABOUT ME
                 <span
                   class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
               </a>
             </li>
-            <li class="group transition duration-300 ml-5">
+            <li class="group transition duration-300">
               <a href="contact.html" class="font-signika text-2xl">CONTACT
                 <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
               </a>
