@@ -45,19 +45,22 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#built-with">Built With</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#html-badge">HTML</a></li>
+        <li><a href="#css-badge">CSS</a></li>
+        <li><a href="#js-badge">JavaScript</a></li>
+        <li><a href="#tailwind-badge">Tailwind CSS</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
+    <li><a href="#quick-start">Quick Start</a></li>
+    <li><a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#todo">ToDo</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -66,7 +69,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-# 📋 About The Project
+# 📋 About The Project <a name="about-the-project"></a>
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photography-portfolio)
 
@@ -74,7 +77,7 @@ This project is a web-based portfolio that beautifully showcases the photography
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🛠️ Built With
+## 🛠️ Built With <a name="built-with"></a>
 
 - [![HTML][html-badge]][html-url]
 - [![CSS][css-badge]][css-url]
@@ -83,19 +86,19 @@ This project is a web-based portfolio that beautifully showcases the photography
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Quick Start
+## 🚀 Quick Start <a name="quick-start"></a>
 
 Create your own page with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/JoaoFranco03/photography-portfolio)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🎯 Getting Started
+## 🎯 Getting Started <a name="getting-started"></a>
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### 🏗️ Installation
+### 🏗️ Installation <a name="installation"></a>
 
 1. Clone the repo
 
@@ -116,25 +119,9 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ✅ ToDo
-
-- [x] Design the UI/UX
-- [x] Create the Images Grid
-- [x] Create the Footer
-- [x] Create the Navbar and make it Responsive
-- [x] Create the Portfolio Page
-- [x] Create the About Me Page
-- [x] Create the Contact Page
-- [x] Add a Dark Mode
-- [x] Create a Lightbox
-- [x] Added Polaroid Frames to Images on "About Me" and "Contact" Pages
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 
-## 📜 License
+## 📜 License <a name="license"></a>
 
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
@@ -142,7 +129,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 
-## 📧 Contact
+## 📧 Contact <a name="contact"></a>
 
 João Franco - https://www.linkedin.com/in/joão-franco-452161195/
 
@@ -152,7 +139,7 @@ Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://g
 
 <!-- ACKNOWLEDGMENTS -->
 
-## 🌟 Acknowledgments
+## 🌟 Acknowledgments <a name="acknowledgments"></a>
 
 - [FancyBox](https://fancyapps.com/fancybox/)
 - [Unsplash](https://unsplash.com/)
