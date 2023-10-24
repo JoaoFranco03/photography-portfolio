@@ -66,7 +66,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-# About The Project
+# 📋 About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photography-portfolio)
 
@@ -74,7 +74,7 @@ This project is a web-based portfolio that beautifully showcases the photography
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Built With
+## 🛠️ Built With
 
 - [![HTML][html-badge]][html-url]
 - [![CSS][css-badge]][css-url]
@@ -83,14 +83,19 @@ This project is a web-based portfolio that beautifully showcases the photography
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
+## 🚀 Quick Start
 
-## Getting Started
+Create your own page with one click on [Netlify](https://app.netlify.com/signup):
+
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/JoaoFranco03/photography-portfolio)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎯 Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Installation
+### 🏗️ Installation
 
 1. Clone the repo
 
@@ -103,12 +108,15 @@ To get a local copy up and running follow these simple example steps.
 ```sh
  npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 ```
-
 3.  Run the Project in a Server
+
+4.  Change it with your own photos, about me and contact info.
+
+5.  Publish it using your preferred hosting platform.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ToDo
+## ✅ ToDo
 
 - [x] Design the UI/UX
 - [x] Create the Images Grid
@@ -126,7 +134,7 @@ To get a local copy up and running follow these simple example steps.
 
 <!-- LICENSE -->
 
-## License
+## 📜 License
 
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
@@ -134,7 +142,7 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 
-## Contact
+## 📧 Contact
 
 João Franco - https://www.linkedin.com/in/joão-franco-452161195/
 
@@ -144,7 +152,7 @@ Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://g
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## 🌟 Acknowledgments
 
 - [FancyBox](https://fancyapps.com/fancybox/)
 - [Unsplash](https://unsplash.com/)
