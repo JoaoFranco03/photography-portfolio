@@ -89,7 +89,9 @@ export function createWatcher(args, { state, rebuild }) {
     // Resolve the promise even when the rebuild fails
     return rebuild(changes).then(
       () => {},
-      () => {}
+      (e) => {
+        console.error(e.toString())
+      }
     )
   }
 
@@ -162,7 +164,7 @@ export function createWatcher(args, { state, rebuild }) {
   // This is very likely a chokidar bug but it's one we need to work around
   // We treat this as a change event and rebuild the CSS
   watcher.on('raw', (evt, filePath, meta) => {
-    if (evt !== 'rename') {
+    if (evt !== 'rename' || filePath === null) {
       return
     }
 
@@ -220,7 +222,7 @@ export function createWatcher(args, { state, rebuild }) {
 
     refreshWatchedFiles() {
       watcher.add(Array.from(state.contextDependencies))
-      watcher.add(Array.from(state.configDependencies))
+      watcher.add(Array.from(state.configBag.dependencies))
       watcher.add(state.contentPatterns.all)
     },
   }

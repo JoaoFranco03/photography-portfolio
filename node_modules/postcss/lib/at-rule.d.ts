@@ -1,48 +1,53 @@
 import Container, { ContainerProps } from './container.js'
 
-interface AtRuleRaws extends Record<string, unknown> {
-  /**
-   * The space symbols before the node. It also stores `*`
-   * and `_` symbols before the declaration (IE hack).
-   */
-  before?: string
+declare namespace AtRule {
+  export interface AtRuleRaws extends Record<string, unknown> {
+    /**
+     * The space symbols after the last child of the node to the end of the node.
+     */
+    after?: string
 
-  /**
-   * The space symbols after the last child of the node to the end of the node.
-   */
-  after?: string
+    /**
+     * The space between the at-rule name and its parameters.
+     */
+    afterName?: string
 
-  /**
-   * The space between the at-rule name and its parameters.
-   */
-  afterName?: string
+    /**
+     * The space symbols before the node. It also stores `*`
+     * and `_` symbols before the declaration (IE hack).
+     */
+    before?: string
 
-  /**
-   * The symbols between the last parameter and `{` for rules.
-   */
-  between?: string
+    /**
+     * The symbols between the last parameter and `{` for rules.
+     */
+    between?: string
 
-  /**
-   * Contains `true` if the last child has an (optional) semicolon.
-   */
-  semicolon?: boolean
+    /**
+     * The rule’s selector with comments.
+     */
+    params?: {
+      raw: string
+      value: string
+    }
 
-  /**
-   * The rule’s selector with comments.
-   */
-  params?: {
-    value: string
-    raw: string
+    /**
+     * Contains `true` if the last child has an (optional) semicolon.
+     */
+    semicolon?: boolean
   }
-}
 
-export interface AtRuleProps extends ContainerProps {
-  /** Name of the at-rule. */
-  name: string
-  /** Parameters following the name of the at-rule. */
-  params?: string | number
-  /** Information used to generate byte-to-byte equal node string as it was in the origin input. */
-  raws?: AtRuleRaws
+  export interface AtRuleProps extends ContainerProps {
+    /** Name of the at-rule. */
+    name: string
+    /** Parameters following the name of the at-rule. */
+    params?: number | string
+    /** Information used to generate byte-to-byte equal node string as it was in the origin input. */
+    raws?: AtRuleRaws
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  export { AtRule_ as default }
 }
 
 /**
@@ -56,7 +61,7 @@ export interface AtRuleProps extends ContainerProps {
  * }
  * ```
  *
- * If it’s followed in the CSS by a {} block, this node will have
+ * If it’s followed in the CSS by a `{}` block, this node will have
  * a nodes property representing its children.
  *
  * ```js
@@ -70,11 +75,7 @@ export interface AtRuleProps extends ContainerProps {
  * media.nodes   //=> []
  * ```
  */
-export default class AtRule extends Container {
-  type: 'atrule'
-  parent: Container | undefined
-  raws: AtRuleRaws
-
+declare class AtRule_ extends Container {
   /**
    * The at-rule’s name immediately follows the `@`.
    *
@@ -85,10 +86,9 @@ export default class AtRule extends Container {
    * ```
    */
   name: string
-
   /**
    * The at-rule’s parameters, the values that follow the at-rule’s name
-   * but precede any {} block.
+   * but precede any `{}` block.
    *
    * ```js
    * const root  = postcss.parse('@media print, screen {}')
@@ -97,10 +97,19 @@ export default class AtRule extends Container {
    * ```
    */
   params: string
+  parent: Container | undefined
 
-  constructor(defaults?: AtRuleProps)
-  assign(overrides: object | AtRuleProps): this
-  clone(overrides?: Partial<AtRuleProps>): this
-  cloneBefore(overrides?: Partial<AtRuleProps>): this
-  cloneAfter(overrides?: Partial<AtRuleProps>): this
+  raws: AtRule.AtRuleRaws
+
+  type: 'atrule'
+
+  constructor(defaults?: AtRule.AtRuleProps)
+  assign(overrides: AtRule.AtRuleProps | object): this
+  clone(overrides?: Partial<AtRule.AtRuleProps>): AtRule
+  cloneAfter(overrides?: Partial<AtRule.AtRuleProps>): AtRule
+  cloneBefore(overrides?: Partial<AtRule.AtRuleProps>): AtRule
 }
+
+declare class AtRule extends AtRule_ {}
+
+export = AtRule

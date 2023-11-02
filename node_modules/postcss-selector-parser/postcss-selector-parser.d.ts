@@ -166,7 +166,7 @@ declare namespace parser {
         replaceWith(...nodes: Node[]): Node;
         next(): Node;
         prev(): Node;
-        clone(opts: {[override: string]:any}): Node;
+        clone(opts?: {[override: string]:any}): Node;
         /**
          * Return whether this node includes the character at the position of the given line and column.
          * Returns undefined if the nodes lack sufficient source metadata to determine the position.

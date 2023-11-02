@@ -40,28 +40,68 @@ class NoWorkResult {
     }
   }
 
-  get [Symbol.toStringTag]() {
-    return 'NoWorkResult'
+  async() {
+    if (this.error) return Promise.reject(this.error)
+    return Promise.resolve(this.result)
   }
 
-  get processor() {
-    return this.result.processor
+  catch(onRejected) {
+    return this.async().catch(onRejected)
   }
 
-  get opts() {
-    return this.result.opts
+  finally(onFinally) {
+    return this.async().then(onFinally, onFinally)
   }
 
-  get css() {
-    return this.result.css
+  sync() {
+    if (this.error) throw this.error
+    return this.result
+  }
+
+  then(onFulfilled, onRejected) {
+    if (process.env.NODE_ENV !== 'production') {
+      if (!('from' in this._opts)) {
+        warnOnce(
+          'Without `from` option PostCSS could generate wrong source map ' +
+            'and will not find Browserslist config. Set it to CSS file path ' +
+            'or to `undefined` to prevent this warning.'
+        )
+      }
+    }
+
+    return this.async().then(onFulfilled, onRejected)
+  }
+
+  toString() {
+    return this._css
+  }
+
+  warnings() {
+    return []
   }
 
   get content() {
     return this.result.css
   }
 
+  get css() {
+    return this.result.css
+  }
+
   get map() {
     return this.result.map
+  }
+
+  get messages() {
+    return []
+  }
+
+  get opts() {
+    return this.result.opts
+  }
+
+  get processor() {
+    return this.result.processor
   }
 
   get root() {
@@ -86,48 +126,8 @@ class NoWorkResult {
     }
   }
 
-  get messages() {
-    return []
-  }
-
-  warnings() {
-    return []
-  }
-
-  toString() {
-    return this._css
-  }
-
-  then(onFulfilled, onRejected) {
-    if (process.env.NODE_ENV !== 'production') {
-      if (!('from' in this._opts)) {
-        warnOnce(
-          'Without `from` option PostCSS could generate wrong source map ' +
-            'and will not find Browserslist config. Set it to CSS file path ' +
-            'or to `undefined` to prevent this warning.'
-        )
-      }
-    }
-
-    return this.async().then(onFulfilled, onRejected)
-  }
-
-  catch(onRejected) {
-    return this.async().catch(onRejected)
-  }
-
-  finally(onFinally) {
-    return this.async().then(onFinally, onFinally)
-  }
-
-  async() {
-    if (this.error) return Promise.reject(this.error)
-    return Promise.resolve(this.result)
-  }
-
-  sync() {
-    if (this.error) throw this.error
-    return this.result
+  get [Symbol.toStringTag]() {
+    return 'NoWorkResult'
   }
 }
 
