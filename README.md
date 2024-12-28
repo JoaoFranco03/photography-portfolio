@@ -119,6 +119,18 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Ko-fi -->
+
+## ☕ Support Me on Ko-fi
+
+If you find this project useful, consider supporting me on Ko-fi. Thanks for checking it out!  
+
+<a href="https://ko-fi.com/joaofranco03" target="_blank">
+    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" style="height:40px;">
+</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LICENSE -->
 
 ## 📜 License <a name="license"></a>
