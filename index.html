@@ -11,7 +11,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />
   <link rel="stylesheet" href="dist/output.css" />
-  <link rel="stylesheet" href="styles.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
@@ -41,52 +40,401 @@
   class="dark:bg-black bg-white h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500 overflow-hidden">
   <!-- Background Canvas with Images -->
   <div class="fixed inset-0 w-full h-full z-0" id="background-canvas">
-    <div class="flex flex-wrap w-full h-full" id="portfolio-grid">
+    <div class="flex flex-wrap w-full h-full items-stretch" id="portfolio-grid">
     </div>
     <!-- Overlay for better button visibility -->
     <div class="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
   </div>
 
-  <!-- Main Content - Centered Button -->
-  <div class="relative z-10 h-screen flex items-center justify-center">
+  <!-- Main Content - Title and Button -->
+  <div class="relative z-10 h-screen flex flex-col items-center justify-center">
+    <h1 class="text-6xl md:text-8xl font-signika font-bold text-white mb-12 text-center drop-shadow-2xl">
+      MARTIN USEO
+    </h1>
     <a href="dist/portfolio/nature.html" 
        class="px-12 py-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white text-2xl font-signika font-bold rounded-lg shadow-lg hover:bg-white dark:hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border-2 border-black/20 dark:border-white/20">
-      ENTRER
+      DÉCOUVRIR LE PORTFOLIO
     </a>
   </div>
 
+  <script src="dist/images-config.js"></script>
   <script>
-    const portfolioImages = [
-      { src: './dist/assets/images/ThéoNoJitensha-1.jpg', alt: 'a person standing in front of a rock formation', size: 'md:w-1/2' },
-      { src: './dist/assets/images/ThéoNoJitensha-2.jpg', alt: 'a cat laying on top of a sidewalk next to the ocean', size: 'md:w-1/2' },
-      { src: './dist/assets/images/ThéoNoJitensha-3.jpg', alt: 'a man standing on a beach next to the ocean', size: 'w-full' },
-      { src: './dist/assets/images/ThéoNoJitensha-4.jpg', alt: 'a snow covered mountain with trees on the side', size: 'w-full' },
-      { src: './dist/assets/images/ThéoNoJitensha-5.jpg', alt: 'a branch of a plant floating in a body of water', size: 'md:w-1/2' },
-      { src: './dist/assets/images/ThéoNoJitensha-6.jpg', alt: 'a blue sky with a lot of red and orange clouds', size: 'md:w-1/2' },
-      { src: './dist/assets/images/ThéoNoJitensha-7.jpg', alt: 'a view of the ocean from the top of a hill', size: 'md:w-1/2' }
+    // Layouts prédéfinis pour la disposition des images
+    const LAYOUTS = [
+      {
+        name: 'portrait-left-landscape-right',
+        description: 'Portrait à gauche, deux paysages à droite',
+        structure: [
+          { width: 'md:w-1/3', height: 'h-full', isLeftColumn: true }, // Portrait à gauche
+          { width: 'md:w-2/3', height: 'h-1/2', isRightColumn: true, isTop: true },  // Paysage 1 en haut à droite
+          { width: 'md:w-2/3', height: 'h-1/2', isRightColumn: true, isBottom: true }   // Paysage 2 en bas à droite
+        ],
+        useColumns: true
+      },
+      {
+        name: 'landscape-top-portrait-bottom',
+        description: 'Deux paysages en haut, portrait en bas',
+        structure: [
+          { width: 'md:w-1/2', height: 'h-1/2' },  // Paysage 1 en haut gauche
+          { width: 'md:w-1/2', height: 'h-1/2' },  // Paysage 2 en haut droite
+          { width: 'w-full', height: 'h-1/2' }     // Portrait en bas pleine largeur
+        ]
+      },
+      {
+        name: 'three-column-grid',
+        description: 'Trois images en colonnes égales',
+        structure: [
+          { width: 'md:w-1/3', height: 'h-full' },
+          { width: 'md:w-1/3', height: 'h-full' },
+          { width: 'md:w-1/3', height: 'h-full' }
+        ]
+      },
+      {
+        name: 'full-top-two-bottom',
+        description: 'Image pleine largeur en haut, deux images en bas',
+        structure: [
+          { width: 'w-full', height: 'h-2/3' },    // Image pleine largeur en haut
+          { width: 'md:w-1/2', height: 'h-1/3' },  // Image 1 en bas gauche
+          { width: 'md:w-1/2', height: 'h-1/3' }   // Image 2 en bas droite
+        ]
+      },
+      {
+        name: 'two-left-one-right',
+        description: 'Deux images à gauche, une grande à droite',
+        structure: [
+          { width: 'md:w-1/2', height: 'h-1/2' },  // Image 1 en haut gauche
+          { width: 'md:w-1/2', height: 'h-1/2' },  // Image 2 en bas gauche
+          { width: 'md:w-1/2', height: 'h-full' }  // Image 3 pleine hauteur à droite
+        ]
+      },
+      {
+        name: 'masonry-style',
+        description: 'Style masonry avec différentes tailles',
+        structure: [
+          { width: 'md:w-1/3', height: 'h-2/3' },  // Image 1
+          { width: 'md:w-1/3', height: 'h-1/3' },  // Image 2
+          { width: 'md:w-1/3', height: 'h-full' },  // Image 3
+          { width: 'md:w-1/3', height: 'h-1/3' }   // Image 4
+        ]
+      }
     ];
 
-    // Fonction pour générer le canvas d'images en arrière-plan
-    function renderBackgroundCanvas() {
-      const grid = document.getElementById('portfolio-grid');
-      const images = portfolioImages;
-      
-      images.forEach((img, index) => {
-        const item = document.createElement('div');
-        item.className = `w-full ${img.size} h-full`;
-        item.innerHTML = `
-          <div class="overflow-hidden h-full w-full">
-            <img alt="${img.alt}"
-              class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500"
-              src="${img.src}" />
-          </div>
-        `;
-        grid.appendChild(item);
+    // Fonction pour précharger une image
+    function preloadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+        img.src = src;
       });
     }
+
+    // Fonction pour précharger toutes les images
+    async function preloadAllImages(images) {
+      const preloadPromises = images.map(img => 
+        preloadImage(img.src).catch(err => {
+          console.warn(`Image failed to load: ${img.src}`, err);
+          return null; // Retourner null pour les images qui échouent
+        })
+      );
+      return Promise.all(preloadPromises);
+    }
+
+    // Fonction pour sélectionner un layout aléatoire
+    function getRandomLayout() {
+      return LAYOUTS[Math.floor(Math.random() * LAYOUTS.length)];
+    }
+
+    // Fonction pour organiser les images selon un layout
+    function organizeImagesForLayout(images, layout) {
+      const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+      
+      // Séparer les images par format (portrait/landscape) plutôt que par catégorie
+      const portraitImages = shuffledImages.filter(img => img.format === 'portrait');
+      const landscapeImages = shuffledImages.filter(img => img.format === 'landscape');
+      
+      // Si format n'est pas défini, utiliser la catégorie comme fallback
+      const portraits = portraitImages.length > 0 ? portraitImages : shuffledImages.filter(img => img.category === 'portraits');
+      const landscapes = landscapeImages.length > 0 ? landscapeImages : shuffledImages.filter(img => img.category === 'nature');
+      
+      const organized = [];
+      const usedImages = new Set(); // Pour éviter les doublons
+      let portraitIndex = 0;
+      let landscapeIndex = 0;
+      let allImagesIndex = 0;
+      
+      console.log(`Organizing images for layout: ${layout.name}`);
+      console.log(`- Portrait images available: ${portraits.length}`);
+      console.log(`- Landscape images available: ${landscapes.length}`);
+      console.log(`- Total images: ${shuffledImages.length}`);
+      console.log(`- Layout structure has ${layout.structure.length} cells`);
+      
+      layout.structure.forEach((cell, index) => {
+        let selectedImage;
+        
+        // Pour le layout "portrait-left-landscape-right", on force le portrait à gauche
+        if (layout.name === 'portrait-left-landscape-right') {
+          if (index === 0) {
+            // Première position : portrait à gauche (format portrait)
+            if (portraits.length > 0) {
+              selectedImage = portraits[portraitIndex % portraits.length];
+              portraitIndex++;
+            } else {
+              // Fallback si pas de portraits disponibles
+              selectedImage = shuffledImages[allImagesIndex % shuffledImages.length];
+              allImagesIndex++;
+            }
+          } else {
+            // Positions suivantes : paysages à droite (format landscape)
+            if (landscapes.length > 0) {
+              selectedImage = landscapes[landscapeIndex % landscapes.length];
+              landscapeIndex++;
+            } else {
+              // Fallback si pas de paysages disponibles
+              selectedImage = shuffledImages[allImagesIndex % shuffledImages.length];
+              allImagesIndex++;
+            }
+          }
+        } 
+        // Pour le layout "landscape-top-portrait-bottom", paysages en haut, portrait en bas
+        else if (layout.name === 'landscape-top-portrait-bottom') {
+          if (index < 2) {
+            // Deux premières positions : paysages en haut (format landscape)
+            if (landscapes.length > 0) {
+              selectedImage = landscapes[landscapeIndex % landscapes.length];
+              landscapeIndex++;
+            } else {
+              selectedImage = shuffledImages[allImagesIndex % shuffledImages.length];
+              allImagesIndex++;
+            }
+          } else {
+            // Dernière position : portrait en bas (format portrait)
+            if (portraits.length > 0) {
+              selectedImage = portraits[portraitIndex % portraits.length];
+              portraitIndex++;
+            } else {
+              selectedImage = shuffledImages[allImagesIndex % shuffledImages.length];
+              allImagesIndex++;
+            }
+          }
+        }
+        // Pour les autres layouts, utiliser toutes les images de manière aléatoire
+        else {
+          // Sélectionner une image différente pour chaque cellule
+          // Garantir qu'on a toujours une image, même si on doit réutiliser
+          
+          // D'abord, essayer de trouver une image non utilisée
+          let foundImage = false;
+          for (let i = 0; i < shuffledImages.length; i++) {
+            const candidate = shuffledImages[(index + i) % shuffledImages.length];
+            if (!usedImages.has(candidate.src)) {
+              selectedImage = candidate;
+              usedImages.add(candidate.src);
+              foundImage = true;
+              break;
+            }
+          }
+          
+          // Si toutes les images sont déjà utilisées, réutiliser une image
+          if (!foundImage) {
+            selectedImage = shuffledImages[index % shuffledImages.length];
+            console.warn(`  Reusing image for cell ${index + 1}: ${selectedImage.filename}`);
+          }
+        }
+        
+        if (selectedImage) {
+          organized.push({
+            ...selectedImage,
+            layoutCell: cell
+          });
+          console.log(`  Cell ${index + 1}: ${selectedImage.filename} (format: ${selectedImage.format || selectedImage.category})`);
+        } else {
+          console.warn(`  Cell ${index + 1}: No image selected!`);
+        }
+      });
+      
+      console.log(`Organized ${organized.length} images for layout ${layout.name} (structure has ${layout.structure.length} cells)`);
+      return organized;
+    }
+
+    // Fonction pour générer le canvas d'images en arrière-plan
+    async function renderBackgroundCanvas() {
+      try {
+        const grid = document.getElementById('portfolio-grid');
+        if (!grid) {
+          console.error('Portfolio grid element not found');
+          return;
+        }
+        
+        grid.innerHTML = ''; // Nettoyer le contenu précédent
+        
+        // Vérifier que IMAGES_CONFIG est disponible
+        if (typeof IMAGES_CONFIG === 'undefined') {
+          console.error('IMAGES_CONFIG is not defined. Make sure dist/images-config.js is loaded.');
+          return;
+        }
+        
+        // Charger toutes les images depuis la configuration centralisée
+        const allImages = IMAGES_CONFIG.getAllImages('./dist/');
+        
+        if (!allImages || allImages.length === 0) {
+          console.error('No images found in configuration');
+          return;
+        }
+        
+        console.log(`Loading ${allImages.length} images...`);
+        
+        // Précharger toutes les images (avec timeout pour éviter de bloquer)
+        try {
+          await Promise.race([
+            preloadAllImages(allImages),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000))
+          ]);
+        } catch (err) {
+          console.warn('Some images failed to preload, continuing anyway:', err);
+        }
+        
+        // Sélectionner un layout aléatoire
+        const selectedLayout = getRandomLayout();
+        console.log('Selected layout:', selectedLayout.name);
+        
+        // Organiser les images selon le layout
+        const organizedImages = organizeImagesForLayout(allImages, selectedLayout);
+        
+        if (!organizedImages || organizedImages.length === 0) {
+          console.error('No images organized for layout');
+          return;
+        }
+      
+        // Appliquer le style approprié selon le layout
+        if (selectedLayout.useColumns) {
+          // Pour les layouts avec colonnes (portrait à gauche, paysages à droite)
+          grid.className = 'flex w-full h-full';
+          grid.innerHTML = ''; // Réinitialiser
+          
+          // Créer la colonne de gauche
+          const leftColumn = document.createElement('div');
+          leftColumn.className = 'flex flex-col md:w-1/3 w-full h-full';
+          
+          // Créer la colonne de droite
+          const rightColumn = document.createElement('div');
+          rightColumn.className = 'flex flex-col md:w-2/3 w-full h-full';
+          
+          organizedImages.forEach((img, index) => {
+            if (!img || !img.layoutCell) return;
+            
+            const item = document.createElement('div');
+            item.className = `w-full ${img.layoutCell.height} overflow-hidden`;
+            item.innerHTML = `
+              <img alt="${img.alt || 'Portfolio image'}"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500"
+                src="${img.src}"
+                onerror="this.style.display='none'; console.warn('Image failed to load: ${img.src}');"
+                onload="this.classList.remove('opacity-0'); this.classList.add('opacity-100');"
+                loading="eager" />
+            `;
+            
+            if (img.layoutCell.isLeftColumn) {
+              leftColumn.appendChild(item);
+            } else if (img.layoutCell.isRightColumn) {
+              rightColumn.appendChild(item);
+            }
+          });
+          
+          grid.appendChild(leftColumn);
+          grid.appendChild(rightColumn);
+        } else {
+          // Pour les layouts flexbox simples
+          // Utiliser flex-col si le layout a des hauteurs partielles (h-1/3, h-2/3, etc.)
+          const hasPartialHeights = organizedImages.some(img => 
+            img.layoutCell.height && (img.layoutCell.height.includes('1/3') || img.layoutCell.height.includes('2/3'))
+          );
+          
+          if (hasPartialHeights) {
+            // Pour les layouts avec hauteurs partielles, utiliser une structure en colonnes
+            grid.className = 'flex flex-wrap w-full h-full';
+            grid.style.display = 'flex';
+            grid.style.flexWrap = 'wrap';
+            grid.style.height = '100%';
+          } else {
+            grid.className = 'flex flex-wrap w-full h-full items-stretch';
+          }
+          
+          console.log(`Rendering ${organizedImages.length} images for flexbox layout`);
+          
+          organizedImages.forEach((img, index) => {
+            if (!img || !img.layoutCell) {
+              console.warn(`Skipping image at index ${index}:`, img);
+              return;
+            }
+            
+            console.log(`Adding image ${index + 1}/${organizedImages.length}: ${img.src} (${img.layoutCell.width}, ${img.layoutCell.height})`);
+            
+            const item = document.createElement('div');
+            // Pour les hauteurs partielles, utiliser des styles inline pour garantir le bon rendu
+            item.className = `w-full ${img.layoutCell.width}`;
+            
+            // Appliquer la hauteur avec un style inline pour garantir qu'elle fonctionne
+            if (img.layoutCell.height) {
+              if (img.layoutCell.height === 'h-full') {
+                item.style.height = '100%';
+              } else if (img.layoutCell.height === 'h-1/2') {
+                item.style.height = '50%';
+              } else if (img.layoutCell.height === 'h-1/3') {
+                item.style.height = '33.333333%';
+              } else if (img.layoutCell.height === 'h-2/3') {
+                item.style.height = '66.666667%';
+              } else {
+                item.className += ` ${img.layoutCell.height}`;
+              }
+            }
+            
+            item.style.overflow = 'hidden';
+            item.innerHTML = `
+              <img alt="${img.alt || 'Portfolio image'}"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500"
+                src="${img.src}"
+                onerror="this.style.display='none'; console.warn('Image failed to load: ${img.src}');"
+                onload="this.classList.remove('opacity-0'); this.classList.add('opacity-100');"
+                loading="eager" />
+            `;
+            grid.appendChild(item);
+          });
+          
+          console.log(`Total items in grid: ${grid.children.length}`);
+        }
+        
+        console.log('Background canvas rendered successfully');
+      } catch (error) {
+        console.error('Error rendering background canvas:', error);
+        // Afficher un message d'erreur ou une image par défaut
+        const grid = document.getElementById('portfolio-grid');
+        if (grid) {
+          grid.innerHTML = '<div class="w-full h-full bg-gray-800 flex items-center justify-center text-white">Erreur de chargement des images</div>';
+        }
+      }
+    }
     
-    // Appeler la fonction au chargement
-    document.addEventListener('DOMContentLoaded', renderBackgroundCanvas);
+    // Attendre que le DOM soit chargé et que le script de configuration soit disponible
+    document.addEventListener('DOMContentLoaded', function() {
+      // Vérifier que le script de configuration est chargé
+      if (typeof IMAGES_CONFIG === 'undefined') {
+        console.error('IMAGES_CONFIG is not defined. Make sure dist/images-config.js is loaded.');
+        // Essayer de charger le script de configuration dynamiquement
+        const script = document.createElement('script');
+        script.src = 'dist/images-config.js';
+        script.onload = function() {
+          console.log('Images config loaded');
+          renderBackgroundCanvas();
+        };
+        script.onerror = function() {
+          console.error('Failed to load images-config.js');
+        };
+        document.head.appendChild(script);
+      } else {
+        renderBackgroundCanvas();
+      }
+    });
   </script>
   <script src="dist/fade_in.js"></script>
 </body>

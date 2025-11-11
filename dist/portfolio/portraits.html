@@ -11,7 +11,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
   <link rel="stylesheet" href="../output.css" />
-  <link rel="stylesheet" href="../styles.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
@@ -57,16 +56,13 @@
       </div>
     </section>
   </div>
+  <script src="../images-config.js"></script>
   <script>
-    const portraitImages = [
-      { src: '../assets/images/ThéoNoJitensha-1.jpg', alt: 'a person standing in front of a rock formation', size: 'md:w-1/2' },
-      { src: '../assets/images/ThéoNoJitensha-2.jpg', alt: 'a cat laying on top of a sidewalk next to the ocean', size: 'md:w-1/2' }
-    ];
-
     // Function to generate the gallery
     function renderPortfolio() {
       const grid = document.getElementById('portfolio-grid');
-      const images = portraitImages;
+      // Charger les images de portraits depuis la configuration centralisée
+      const images = IMAGES_CONFIG.getPortraitImages('../');
       
       images.forEach((img, index) => {
         const item = document.createElement('div');

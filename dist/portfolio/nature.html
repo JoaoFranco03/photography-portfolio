@@ -11,7 +11,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
   <link rel="stylesheet" href="../output.css" />
-  <link rel="stylesheet" href="../styles.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
@@ -57,19 +56,13 @@
       </div>
     </section>
   </div>
+  <script src="../images-config.js"></script>
   <script>
-    const natureImages = [
-      { src: '../assets/images/ThéoNoJitensha-3.jpg', alt: 'a man standing on a beach next to the ocean', size: 'w-full' },
-      { src: '../assets/images/ThéoNoJitensha-4.jpg', alt: 'a snow covered mountain with trees on the side', size: 'w-full' },
-      { src: '../assets/images/ThéoNoJitensha-5.jpg', alt: 'a branch of a plant floating in a body of water', size: 'md:w-1/2' },
-      { src: '../assets/images/ThéoNoJitensha-6.jpg', alt: 'a blue sky with a lot of red and orange clouds', size: 'md:w-1/2' },
-      { src: '../assets/images/ThéoNoJitensha-7.jpg', alt: 'a view of the ocean from the top of a hill', size: 'md:w-1/2' }
-    ];
-
     // Function to generate the gallery
     function renderPortfolio() {
       const grid = document.getElementById('portfolio-grid');
-      const images = natureImages;
+      // Charger les images de nature depuis la configuration centralisée
+      const images = IMAGES_CONFIG.getNatureImages('../');
       
       images.forEach((img, index) => {
         const item = document.createElement('div');
