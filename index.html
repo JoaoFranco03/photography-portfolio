@@ -19,12 +19,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
   <!-- End - Fonts -->
-  <!-- Start - Fancybox Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <!-- End - Fancybox Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -41,27 +35,26 @@
       plugins: [],
     }
   </script>
-  <script src="components/loader.js"></script>
-  <script src="components/dropdown.js"></script>
 </head>
 
 <body
-  class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
-  <!-- Navbar -->
-  <div id="navbar-container" data-path="components/navbar.html"></div>
-  <!-- Content -->
-  <div class="container mx-auto">
-    <h1 class="text-4xl pt-10 pb-8 font-bold">PORTFOLIO</h1>
-    <section class="text-neutral-700">
-      <div class="container w-full">
-        <div class="flex flex-wrap w-full" id="portfolio-grid">
-        </div>
-      </div>
-    </section>
+  class="dark:bg-black bg-white h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500 overflow-hidden">
+  <!-- Background Canvas with Images -->
+  <div class="fixed inset-0 w-full h-full z-0" id="background-canvas">
+    <div class="flex flex-wrap w-full h-full" id="portfolio-grid">
+    </div>
+    <!-- Overlay for better button visibility -->
+    <div class="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
   </div>
-  <!-- <script src="dist/images-config.js"></script>
-  <script src="dist/fade_in.js"></script>
-  <script src="dist/menu.js"></script> -->
+
+  <!-- Main Content - Centered Button -->
+  <div class="relative z-10 h-screen flex items-center justify-center">
+    <a href="dist/portfolio/nature.html" 
+       class="px-12 py-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white text-2xl font-signika font-bold rounded-lg shadow-lg hover:bg-white dark:hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border-2 border-black/20 dark:border-white/20">
+      ENTRER
+    </a>
+  </div>
+
   <script>
     const portfolioImages = [
       { src: './dist/assets/images/ThéoNoJitensha-1.jpg', alt: 'a person standing in front of a rock formation', size: 'md:w-1/2' },
@@ -73,41 +66,29 @@
       { src: './dist/assets/images/ThéoNoJitensha-7.jpg', alt: 'a view of the ocean from the top of a hill', size: 'md:w-1/2' }
     ];
 
-    // Fonction pour générer la galerie
-    function renderPortfolio() {
+    // Fonction pour générer le canvas d'images en arrière-plan
+    function renderBackgroundCanvas() {
       const grid = document.getElementById('portfolio-grid');
       const images = portfolioImages;
       
       images.forEach((img, index) => {
         const item = document.createElement('div');
-        item.className = `w-full ${img.size} p-1`;
+        item.className = `w-full ${img.size} h-full`;
         item.innerHTML = `
           <div class="overflow-hidden h-full w-full">
-            <a href="${img.src}" data-fancybox="gallery">
-              <img alt="${img.alt}"
-                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
-                src="${img.src}" />
-            </a>
+            <img alt="${img.alt}"
+              class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500"
+              src="${img.src}" />
           </div>
         `;
         grid.appendChild(item);
       });
-      
-      // Réinitialiser Fancybox après avoir inséré les images
-      Fancybox.bind("[data-fancybox]", {});
     }
     
     // Appeler la fonction au chargement
-    document.addEventListener('DOMContentLoaded', renderPortfolio);
-  </script>
-  <!-- Footer -->
-  <div id="footer-container" data-path="components/footer.html"></div>
-  <!-- Script for the LightBox -->
-  <script>
-    Fancybox.bind("[data-fancybox]", {});
+    document.addEventListener('DOMContentLoaded', renderBackgroundCanvas);
   </script>
   <script src="dist/fade_in.js"></script>
-  <script src="dist/menu.js"></script>
 </body>
 
 </html>

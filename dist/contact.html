@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Start - Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,31 +50,34 @@
         <div class="max-w-screen-md">
           <h1 class="text-4xl pt-10 pb-8"><b>CONTACT</b></h1>
 
-          <form class="space-y-8" action="mailto:info@example.com">
+          <div id="message-alert" class="hidden mb-4 p-4 rounded-lg"></div>
+
+          <form class="space-y-8" onsubmit="handleContactForm(event)" id="contact-form">
             <div>
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
                 email</label>
-              <input type="email" id="email"
+              <input type="email" id="email" name="email"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 placeholder="example@gmail.com" required />
             </div>
             <div>
               <label for="subject"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-              <input type="text" id="subject"
+              <input type="text" id="subject" name="subject"
                 class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 placeholder="Let me know how I can help you" required />
             </div>
             <div class="sm:col-span-2">
               <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
                 message</label>
-              <textarea id="message" rows="6"
+              <textarea id="message" name="message" rows="6"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Leave a comment..." required></textarea>
             </div>
-            <button type="submit"
-              class="py-3 px-5 text-sm font-medium text-center bg-black dark:bg-white text-white dark:text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              Send message
+            <button type="submit" id="submit-btn"
+              class="py-3 px-5 text-sm font-medium text-center bg-black dark:bg-white text-white dark:text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 disabled:opacity-50 disabled:cursor-not-allowed">
+              <span id="submit-text">Send message</span>
+              <span id="submit-loading" class="hidden">Sending...</span>
             </button>
           </form>
         </div>
@@ -91,6 +96,106 @@
   <!-- Footer -->
   <div id="footer-container" data-path="../components/footer.html"></div>
 
+  <script>
+    // Configuration EmailJS
+    const EMAILJS_CONFIG = {
+      publicKey: "UqY3Gyh26bKW_zM17",
+      serviceId: "service_eot5xqw",
+      templateId: "template_v33hn92"
+    };
+
+    // Initialiser EmailJS seulement si la clé est configurée
+    if (EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+      emailjs.init(EMAILJS_CONFIG.publicKey);
+    }
+
+    function showAlert(message, isSuccess) {
+      const alertDiv = document.getElementById('message-alert');
+      alertDiv.className = isSuccess 
+        ? 'mb-4 p-4 rounded-lg bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 border border-green-400'
+        : 'mb-4 p-4 rounded-lg bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 border border-red-400';
+      alertDiv.textContent = message;
+      alertDiv.classList.remove('hidden');
+      
+      // Masquer l'alerte après 8 secondes pour les erreurs de configuration
+      const timeout = isSuccess ? 5000 : 8000;
+      setTimeout(() => {
+        alertDiv.classList.add('hidden');
+      }, timeout);
+    }
+
+    function setLoading(isLoading) {
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const submitLoading = document.getElementById('submit-loading');
+      
+      if (isLoading) {
+        submitBtn.disabled = true;
+        submitText.classList.add('hidden');
+        submitLoading.classList.remove('hidden');
+      } else {
+        submitBtn.disabled = false;
+        submitText.classList.remove('hidden');
+        submitLoading.classList.add('hidden');
+      }
+    }
+
+    function getErrorMessage(error) {
+      if (error.status === 400 && error.text && error.text.includes('Public Key')) {
+        return 'EmailJS n\'est pas configuré. Veuillez configurer vos clés EmailJS dans le code. Contactez-moi directement à martin.useo@gmail.com en attendant.';
+      }
+      if (error.status === 400 && error.text && error.text.includes('Service')) {
+        return 'Service ID invalide. Vérifiez votre configuration EmailJS.';
+      }
+      if (error.status === 400 && error.text && error.text.includes('Template')) {
+        return 'Template ID invalide. Vérifiez votre configuration EmailJS.';
+      }
+      return 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou me contacter directement à martin.useo@gmail.com';
+    }
+
+    async function handleContactForm(event) {
+      event.preventDefault();
+      
+      // Vérifier si EmailJS est configuré
+      if (EMAILJS_CONFIG.publicKey === "YOUR_PUBLIC_KEY" || 
+          EMAILJS_CONFIG.serviceId === "YOUR_SERVICE_ID" || 
+          EMAILJS_CONFIG.templateId === "YOUR_TEMPLATE_ID") {
+        showAlert('Le formulaire n\'est pas encore configuré. Contactez-moi directement à martin.useo@gmail.com', false);
+        return;
+      }
+      
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      setLoading(true);
+      
+      try {
+        const response = await emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          {
+            to_email: 'martin.useo@gmail.com',
+            from_email: email,
+            subject: subject,
+            message: message,
+            reply_to: email
+          }
+        );
+        
+        if (response.status === 200) {
+          showAlert('Message envoyé avec succès ! Je vous répondrai bientôt.', true);
+          document.getElementById('contact-form').reset();
+        }
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi:', error);
+        const errorMessage = getErrorMessage(error);
+        showAlert(errorMessage, false);
+      } finally {
+        setLoading(false);
+      }
+    }
+  </script>
   <script src="fade_in.js"></script>
   <script src="menu.js"></script>
 </body>

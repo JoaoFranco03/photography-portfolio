@@ -80,8 +80,6 @@
     const contactLink = document.getElementById('nav-contact-link');
     
     // Dropdown links
-    const portfolioAllLink = document.getElementById('nav-portfolio-all-link');
-    const portfolioAllLinkMobile = document.getElementById('nav-portfolio-all-link-mobile');
     const portfolioNatureLink = document.getElementById('nav-portfolio-nature-link');
     const portfolioNatureLinkMobile = document.getElementById('nav-portfolio-nature-link-mobile');
     const portfolioPortraitsLink = document.getElementById('nav-portfolio-portraits-link');
@@ -94,8 +92,6 @@
       if (contactLink) contactLink.href = '../contact.html';
       
       // Portfolio dropdown links
-      if (portfolioAllLink) portfolioAllLink.href = '../../index.html';
-      if (portfolioAllLinkMobile) portfolioAllLinkMobile.href = '../../index.html';
       if (portfolioNatureLink) portfolioNatureLink.href = 'nature.html';
       if (portfolioNatureLinkMobile) portfolioNatureLinkMobile.href = 'nature.html';
       if (portfolioPortraitsLink) portfolioPortraitsLink.href = 'portraits.html';
@@ -110,8 +106,6 @@
       if (contactLink) contactLink.href = 'contact.html';
       
       // Portfolio dropdown links
-      if (portfolioAllLink) portfolioAllLink.href = '../index.html';
-      if (portfolioAllLinkMobile) portfolioAllLinkMobile.href = '../index.html';
       if (portfolioNatureLink) portfolioNatureLink.href = 'portfolio/nature.html';
       if (portfolioNatureLinkMobile) portfolioNatureLinkMobile.href = 'portfolio/nature.html';
       if (portfolioPortraitsLink) portfolioPortraitsLink.href = 'portfolio/portraits.html';
@@ -126,8 +120,6 @@
       if (contactLink) contactLink.href = 'dist/contact.html';
       
       // Portfolio dropdown links
-      if (portfolioAllLink) portfolioAllLink.href = 'index.html';
-      if (portfolioAllLinkMobile) portfolioAllLinkMobile.href = 'index.html';
       if (portfolioNatureLink) portfolioNatureLink.href = 'dist/portfolio/nature.html';
       if (portfolioNatureLinkMobile) portfolioNatureLinkMobile.href = 'dist/portfolio/nature.html';
       if (portfolioPortraitsLink) portfolioPortraitsLink.href = 'dist/portfolio/portraits.html';
@@ -156,7 +148,7 @@
     }
     
     // Set active page underline
-    if (isInPortfolio || currentPage === 'index.html' || currentPage === '' || currentPage === '/') {
+    if (isInPortfolio) {
       if (portfolioUnderline) {
         portfolioUnderline.className = 'hidden md:block h-0.5 bg-black dark:bg-white';
       }
