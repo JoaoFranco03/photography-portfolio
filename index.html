@@ -47,12 +47,12 @@
   </div>
 
   <!-- Main Content - Title and Button -->
-  <div class="relative z-10 h-screen flex flex-col items-center justify-center">
+  <div class="relative z-10 h-screen flex flex-col items-center justify-center overflow-hidden px-4">
     <h1 class="text-6xl md:text-8xl font-signika font-bold text-white mb-12 text-center drop-shadow-2xl">
       MARTIN USEO
     </h1>
     <a href="dist/portfolio/nature.html" 
-       class="px-12 py-6 bg-white/90 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white text-2xl font-signika font-bold rounded-lg shadow-lg hover:bg-white dark:hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border-2 border-black/20 dark:border-white/20">
+       class="px-8 md:px-12 py-4 md:py-6 bg-white/70 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white text-xl md:text-2xl font-signika font-bold rounded-lg shadow-lg hover:bg-white/80 dark:hover:bg-white/20 transition-all duration-300 transform hover:scale-105 active:scale-100 md:hover:scale-105 border-2 border-black/20 dark:border-white/20">
       DÉCOUVRIR LE PORTFOLIO
     </a>
   </div>
@@ -102,20 +102,11 @@
         name: 'two-left-one-right',
         description: 'Deux images à gauche, une grande à droite',
         structure: [
-          { width: 'md:w-1/2', height: 'h-1/2' },  // Image 1 en haut gauche
-          { width: 'md:w-1/2', height: 'h-1/2' },  // Image 2 en bas gauche
-          { width: 'md:w-1/2', height: 'h-full' }  // Image 3 pleine hauteur à droite
-        ]
-      },
-      {
-        name: 'masonry-style',
-        description: 'Style masonry avec différentes tailles',
-        structure: [
-          { width: 'md:w-1/3', height: 'h-2/3' },  // Image 1
-          { width: 'md:w-1/3', height: 'h-1/3' },  // Image 2
-          { width: 'md:w-1/3', height: 'h-full' },  // Image 3
-          { width: 'md:w-1/3', height: 'h-1/3' }   // Image 4
-        ]
+          { width: 'md:w-1/2', height: 'h-1/2', isLeftColumn: true },  // Image 1 en haut gauche
+          { width: 'md:w-1/2', height: 'h-1/2', isLeftColumn: true },  // Image 2 en bas gauche
+          { width: 'md:w-1/2', height: 'h-full', isRightColumn: true }  // Image 3 pleine hauteur à droite
+        ],
+        useColumns: true
       }
     ];
 
@@ -308,20 +299,37 @@
       
         // Appliquer le style approprié selon le layout
         if (selectedLayout.useColumns) {
-          // Pour les layouts avec colonnes (portrait à gauche, paysages à droite)
+          // Pour les layouts avec colonnes
           grid.className = 'flex w-full h-full';
           grid.innerHTML = ''; // Réinitialiser
           
+          // Déterminer les largeurs des colonnes selon le layout
+          let leftWidth, rightWidth;
+          if (selectedLayout.name === 'two-left-one-right') {
+            // Colonnes égales pour two-left-one-right
+            leftWidth = 'md:w-1/2';
+            rightWidth = 'md:w-1/2';
+          } else {
+            // Par défaut : 1/3 gauche, 2/3 droite (portrait-left-landscape-right)
+            leftWidth = 'md:w-1/3';
+            rightWidth = 'md:w-2/3';
+          }
+          
           // Créer la colonne de gauche
           const leftColumn = document.createElement('div');
-          leftColumn.className = 'flex flex-col md:w-1/3 w-full h-full';
+          leftColumn.className = `flex flex-col ${leftWidth} w-full h-full`;
           
           // Créer la colonne de droite
           const rightColumn = document.createElement('div');
-          rightColumn.className = 'flex flex-col md:w-2/3 w-full h-full';
+          rightColumn.className = `flex flex-col ${rightWidth} w-full h-full`;
+          
+          console.log(`Rendering ${organizedImages.length} images for column layout (${selectedLayout.name})`);
           
           organizedImages.forEach((img, index) => {
-            if (!img || !img.layoutCell) return;
+            if (!img || !img.layoutCell) {
+              console.warn(`Skipping image at index ${index}:`, img);
+              return;
+            }
             
             const item = document.createElement('div');
             item.className = `w-full ${img.layoutCell.height} overflow-hidden`;
@@ -336,13 +344,19 @@
             
             if (img.layoutCell.isLeftColumn) {
               leftColumn.appendChild(item);
+              console.log(`  ✓ Image ${index + 1} added to left column: ${img.filename || img.src}`);
             } else if (img.layoutCell.isRightColumn) {
               rightColumn.appendChild(item);
+              console.log(`  ✓ Image ${index + 1} added to right column: ${img.filename || img.src}`);
+            } else {
+              console.warn(`  ⚠ Image ${index + 1} has no column assignment: ${img.filename || img.src}`);
             }
           });
           
           grid.appendChild(leftColumn);
           grid.appendChild(rightColumn);
+          
+          console.log(`Total columns: 2 (left: ${leftColumn.children.length} items, right: ${rightColumn.children.length} items)`);
         } else {
           // Pour les layouts flexbox simples
           // Utiliser flex-col si le layout a des hauteurs partielles (h-1/3, h-2/3, etc.)
