@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>kngavrilov.com</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/Brain_icon-icons.com_75034.ico"/>
+  </head>
+  <body>
+    <div class="header">
+      <p style="margin-left: 1%;">
+        <a href="https://kngavrilov.com/" style="color: aquamarine;"class="courier">kngavrilov</a>
+        <a href="index.html" style="color: #b74224;" class="courier">portrait</a>
+        <a href="about.html" style="color: #fbb7c0;" class="courier">about</a>
+        <a class="courier" style="color: grey;" onclick="muteAudio();">(un)mute</a>
+      </p>
+    </div>
+    <div id="wrapper"></div>
+<div style="text-align: center;">
+  <input type="button" class="foot" id="vorige" value="previous" onclick="previous()">   
+  <input type="text" id="number" class="foot"  placeholder="enter number">
+  <input type="button" class="foot" id="volgende" value="next" onclick="next()">
+</div>
+    <img src="assets/landscape.png" class="fullscreen"></img>
+<style>
+  @font-face {
+  font-family: typewriter;
+  src: url("typwriter.ttf");
+}
+.courier{
+  font-family: typewriter;
+}
+body{
+  background-image:url("assets/green.jpg");
+  background-repeat: repeat;
+  background-color: black;
+}
+a{text-decoration: none; }
+div.a{
+  height: 73vw;
+  max-height: 90vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+::placeholder {
+   text-align: center; 
+}
+.header{
+  height: 4.5vh;  
+  font-size: min(5vh, 10vw);
+  font-family: 'Courier New', Courier, monospace;
+}
+.fullscreen
+ {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+    pointer-events: none;
+}
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+p{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 45%;
+}
+.foot{
+  display: inline-block;
+  height:2.5vh;
+  width:10vh;   
+  border: none;
+}
+#volgende{
+  background-color: #3c0928; 
+  border: none;
+  color: white;
+}
+#vorige{
+  background-color: #38618C;
+  color: white;
+  border: none;
+
+}
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox]', {
+        // Your custom options
+      });    
+    </script>
+    <script>
+      var audio = new Audio("assets/nature.mp3");
+      audio.play();
+      function muteAudio() {
+        audio.play();
+        audio.muted = !audio.muted;}
+      var wrapper = document.getElementById("wrapper");
+      var totalphotos = 92;
+      var i = Math.floor(Math.random() * (totalphotos - 2) ) + 1;
+      var myHTML = `<div class="a" style="background-image:url('https://images.kngavrilov.com/landscape/${i}.jpg');"> <a href="https://images.kngavrilov.com/landscape/${i}.jpg" data-fancybox="gallery" class="fill-div"> </a> </div>`;
+      document.getElementById("wrapper").innerHTML = myHTML
+      function previous() {
+      if (i>1){
+        var myHTML = `<div class="a" style="background-image:url('https://images.kngavrilov.com/landscape/${i-1}.jpg');"> <a href="https://images.kngavrilov.com/landscape/${i-1}.jpg" data-fancybox="gallery" class="fill-div"> </a> </div>`;
+        i-=1
+        document.getElementById("wrapper").innerHTML = myHTML;
+      }
+      }
+      function next() {
+      if (i<totalphotos){
+        var myHTML = `<div class="a" style="background-image:url('https://images.kngavrilov.com/landscape/${i+1}.jpg');"> <a href="https://images.kngavrilov.com/landscape/${i+1}.jpg" data-fancybox="gallery" class="fill-div"> </a> </div>`;
+        i+=1
+        document.getElementById("wrapper").innerHTML = myHTML;
+      }
+      }
+      var getal = document.getElementById("number");
+      getal.addEventListener("keypress", function(event){if(event.key === "Enter"){
+        if (Number(document.getElementById("number").value)<=totalphotos){
+        i = Number(document.getElementById("number").value);
+        var myHTML = `<div class="a" style="background-image:url('https://images.kngavrilov.com/landscape/${Number(document.getElementById("number").value)}.jpg');"> <a href="https://images.kngavrilov.com/landscape/${Number(document.getElementById("number").value)}.jpg" data-fancybox="gallery" class="fill-div"> </a> </div>`;
+        document.getElementById("wrapper").innerHTML = myHTML;
+      }}
+      });
+    </script>
+    <script type='text/javascript' src='bug-min.js'></script>
+		<script type='text/javascript'>
+			// default fruit fly bug:
+			new BugController({
+			});
+		</script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>kngavrilov.com</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/Brain_icon-icons.com_75034.ico"/>
+  </head>
+  <body>
+    <div class="header">
+      <p style="margin-left: 1%;">
+        <a href="https://kngavrilov.com/" style="color: aquamarine;" class="courier">kngavrilov</a>
+        <a href="index.html" style="color: #b74224;" class="courier">portrait</a>
+        <a href="landscape.html" style="color: #fbb7c0;" class="courier">landscape</a>
+        <a class="courier" style="color: grey;" onclick="muteAudio();">(un)mute</a>
+      </p>
+    </div>
+    <div class="a">i cant be bothered to write a about page rn but you can always <a href="mailto:emailme@kngavrilov.com">emailme@kngavrilov.com</a> </br> these are some of the songs i listen to <a href="https://open.spotify.com/playlist/6W2ZfOQCKUv6BM7XNMmn8Y?si=3d8b73f612874e59">(playlist)</a>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6W2ZfOQCKUv6BM7XNMmn8Y?utm_source=generator&theme=0" width="100%" height="5360" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+<style>
+    @font-face {
+  font-family: typewriter;
+  src: url("typwriter.ttf");
+}
+.courier{
+  font-family: typewriter;
+}
+body{   
+  background-image:url("assets/navy.jpg");
+  background-repeat: repeat;
+  background-color: black;
+}
+a{text-decoration: none; }
+div.a{
+color: #de881f;
+font-size: 9vw;
+text-align: center;
+height: auto;
+}
+.header{
+  height: 4.5vh;  
+  font-size: min(5vh, 10vw);
+  font-family: 'Courier New', Courier, monospace;
+}
+.fullscreen
+ {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+    pointer-events: none;
+}
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+p{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  font-size: 45%;
+}
+.foot{
+  display: inline-block; 
+}
+#volgende{
+  background-color: #3c0928; 
+  border: none;
+  color: white;
+}
+#vorige{
+  background-color: #38618C;
+  color: white;
+  border: none;
+
+}
+a{
+  color: white;
+  font-size: 100%;
+}
+</style>
+  <script>var audio = new Audio("assets/nature.mp3");
+      audio.play();
+      function muteAudio() {
+        audio.play();
+        audio.muted = !audio.muted;}</script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox]', {
+        // Your custom options
+      });    
+    </script>
+    <script type='text/javascript' src='bug-min.js'></script>
+		<script type='text/javascript'>
+			// default fruit fly bug:
+			new BugController({
+			});
+		</script>
+  </body>
+</html>

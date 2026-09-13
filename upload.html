@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>kngavrilov uploader</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/Brain_icon-icons.com_75034.ico"/>
+  </head>
+  <body>
+<p>Account id: <input type="text" id="account_id"></input></p>
+<p>Access key id: <input type="text" id="access_key_id"></input></p>
+<p>Secret access key: <input type="text" id="secret_access_key"></input></p>
+<p>Bucket name: <input type="text" id="bucket_name"></input></p>
+<p>File Name: <input type="text" id="file_name"></input></p>
+<p>File input: <input type= "file" id="file_input"></input></p>
+<button type="button" onclick="UploadFile()">Upload file</button>
+<button type="button" onclick="SignedUrl()">Generate signed URL</button>
+<p>Signed url: </p>
+<p id="signedurl"></p>
+<p>Progess: </p>
+<p id="progress"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1500.0/aws-sdk.min.js"></script>
+
+<script>
+  
+  function createS3() {
+    return new AWS.S3({
+      accessKeyId: document.getElementById("access_key_id").value,
+      secretAccessKey: document.getElementById("secret_access_key").value,
+      endpoint: `https://${document.getElementById("account_id").value}.r2.cloudflarestorage.com`,
+      region: 'auto',
+      signatureVersion: 'v4'
+    });
+  }
+
+  function SignedUrl() {
+    const s3 = createS3();
+    const params = {
+      Bucket: document.getElementById("bucket_name").value,
+      Key: document.getElementById("file_name").value,
+      Expires: 604800
+    };
+
+    s3.getSignedUrl('getObject', params, function (err, url) {
+      if (err) {
+        console.error(err);
+        alert("Error generating URL");
+      } else {
+        document.getElementById("signedurl").innerText = url;
+      }
+    });
+  }
+
+  function UploadFile() {
+    const s3 = createS3();
+    const file = document.getElementById("file_input").files[0];
+    const fileName = document.getElementById("file_name").value || file.name;
+
+    const params = {
+      Bucket: document.getElementById("bucket_name").value,
+      Key: fileName,
+      Body: file,
+      ContentType: file.type
+    };
+
+    const upload = s3.upload(params);
+
+    upload.on('httpUploadProgress', function (progress) {
+      document.getElementById("progress").innerHTML = `Uploaded ${progress.loaded} bytes`;
+    });
+
+    upload.send(function (err, data) {
+      if (err) {
+        console.error(err);
+        alert("Upload failed. Check CORS settings in R2.");
+      } else {
+        alert("Upload complete!");
+      }
+    });
+  }
+</script>
+  </body>
+</html>
