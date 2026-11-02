@@ -1,0 +1,8 @@
+node_modules/
+images/
+assets/
+src/images/
+dist/assets/
+*.jpg
+*.png
+*.webm
